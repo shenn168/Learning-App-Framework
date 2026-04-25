@@ -1,0 +1,10 @@
+{
+  "curricula": [
+    {
+      "id": "passkeys-v1",
+      "title": "Passkeys Fundamentals",
+      "file": "passkeys-v1.json",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,1358 @@
+{
+  "id": "passkeys-v1",
+  "title": "Passkeys Fundamentals",
+  "version": "1.0.0",
+  "language": "en",
+  "description": "A comprehensive curriculum covering passkey technology from foundational concepts through technical implementation, business adoption, and leadership governance.",
+  "level": "Beginner to Advanced",
+  "estimatedMinutes": 180,
+  "author": "LearnFlow Curriculum Team",
+  "tracks": [
+    {
+      "id": "foundation",
+      "title": "Foundation",
+      "description": "Core concepts every learner needs — why passwords fail, what passkeys are, and how they protect you.",
+      "summary": "Build your understanding of passkey fundamentals from the ground up.",
+      "order": 1,
+      "icon": "🎯"
+    },
+    {
+      "id": "user-business",
+      "title": "User & Business",
+      "description": "Practical guidance for everyday users and business professionals managing the transition to passkeys.",
+      "summary": "Learn how passkeys affect daily workflows, device changes, and account recovery.",
+      "order": 2,
+      "icon": "👤"
+    },
+    {
+      "id": "technical",
+      "title": "Technical",
+      "description": "Deep dive into WebAuthn, public-key cryptography, and secure implementation patterns for engineers.",
+      "summary": "Understand the protocol layer, authenticator roles, and integration design.",
+      "order": 3,
+      "icon": "🔧"
+    },
+    {
+      "id": "leadership",
+      "title": "Leadership",
+      "description": "Strategic thinking for managers, risk owners, and decision-makers driving passkey adoption.",
+      "summary": "Evaluate adoption strategies, policy frameworks, and recovery governance.",
+      "order": 4,
+      "icon": "📋"
+    }
+  ],
+  "modules": [
+    {
+      "id": "mod-f1",
+      "trackId": "foundation",
+      "title": "The Password Problem",
+      "summary": "Understand why passwords are failing us and what risks they create.",
+      "estimatedMinutes": 20,
+      "order": 1
+    },
+    {
+      "id": "mod-f2",
+      "trackId": "foundation",
+      "title": "What Are Passkeys?",
+      "summary": "Learn what passkeys are, how they work at a high level, and why they matter.",
+      "estimatedMinutes": 25,
+      "order": 2
+    },
+    {
+      "id": "mod-f3",
+      "trackId": "foundation",
+      "title": "Phishing Resistance",
+      "summary": "Discover how passkeys eliminate phishing attacks by design.",
+      "estimatedMinutes": 15,
+      "order": 3
+    },
+    {
+      "id": "mod-f4",
+      "trackId": "foundation",
+      "title": "Your Daily Mental Model",
+      "summary": "Build the right mental model for thinking about passkeys in everyday life.",
+      "estimatedMinutes": 15,
+      "order": 4
+    },
+    {
+      "id": "mod-u1",
+      "trackId": "user-business",
+      "title": "Device Changes & Passkey Portability",
+      "summary": "What happens to your passkeys when you get a new phone or switch platforms.",
+      "estimatedMinutes": 20,
+      "order": 1
+    },
+    {
+      "id": "mod-u2",
+      "trackId": "user-business",
+      "title": "Recovery Thinking",
+      "summary": "How to prepare for account recovery without passwords as a fallback.",
+      "estimatedMinutes": 15,
+      "order": 2
+    },
+    {
+      "id": "mod-u3",
+      "trackId": "user-business",
+      "title": "Practical Adoption Behavior",
+      "summary": "Step-by-step guidance for starting to use passkeys in your daily life.",
+      "estimatedMinutes": 15,
+      "order": 3
+    },
+    {
+      "id": "mod-t1",
+      "trackId": "technical",
+      "title": "WebAuthn Roles & Ceremonies",
+      "summary": "Understand the Relying Party, Authenticator, and Client roles in the WebAuthn protocol.",
+      "estimatedMinutes": 25,
+      "order": 1
+    },
+    {
+      "id": "mod-t2",
+      "trackId": "technical",
+      "title": "Public-Key Concepts",
+      "summary": "How asymmetric cryptography underpins passkey security without shared secrets.",
+      "estimatedMinutes": 20,
+      "order": 2
+    },
+    {
+      "id": "mod-t3",
+      "trackId": "technical",
+      "title": "Fallback & Migration Design",
+      "summary": "Designing secure fallback flows and migrating from password-based systems.",
+      "estimatedMinutes": 20,
+      "order": 3
+    },
+    {
+      "id": "mod-l1",
+      "trackId": "leadership",
+      "title": "Adoption Strategy",
+      "summary": "Planning and driving organizational passkey adoption.",
+      "estimatedMinutes": 20,
+      "order": 1
+    },
+    {
+      "id": "mod-l2",
+      "trackId": "leadership",
+      "title": "Policy & Compliance",
+      "summary": "Aligning passkey deployment with security policies and compliance requirements.",
+      "estimatedMinutes": 15,
+      "order": 2
+    },
+    {
+      "id": "mod-l3",
+      "trackId": "leadership",
+      "title": "Recovery Governance",
+      "summary": "Establishing governance frameworks for account recovery in a passwordless world.",
+      "estimatedMinutes": 15,
+      "order": 3
+    }
+  ],
+  "lessons": [
+    {
+      "id": "les-f1-1",
+      "moduleId": "mod-f1",
+      "title": "Why Passwords Fail",
+      "summary": "The fundamental weaknesses of password-based authentication.",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "The Shared Secret Problem",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Passwords are shared secrets. When you create a password, a copy of it (or a hash of it) is stored on the server. This means the secret exists in two places — your memory and someone else's database."
+        },
+        {
+          "type": "paragraph",
+          "text": "This fundamental design has serious consequences. If the server is breached, your secret is exposed. If you reuse the password across sites, one breach compromises multiple accounts."
+        },
+        {
+          "type": "callout",
+          "title": "Key Insight",
+          "text": "The core problem is not that people choose weak passwords — it is that the password model requires secrets to be shared with every service you use."
+        },
+        {
+          "type": "heading",
+          "text": "The Scale of the Problem",
+          "level": 3
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Over 80% of data breaches involve stolen or weak credentials",
+            "The average person manages over 100 online accounts",
+            "Password reuse rates exceed 60% across studies",
+            "Credential stuffing attacks test billions of stolen passwords automatically"
+          ]
+        },
+        {
+          "type": "scenario",
+          "title": "Real-World Scenario",
+          "text": "Imagine a large retailer suffers a database breach. Millions of email and password pairs are leaked. Attackers run those credentials against banking sites, email providers, and corporate VPNs. Within hours, thousands of accounts across unrelated services are compromised — all because passwords were reused."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f1-1-1",
+          "title": "Check Your Understanding",
+          "prompt": "What is the fundamental design flaw of passwords?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "They are too short",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "They are shared secrets stored on both client and server",
+              "correct": true
+            },
+            {
+              "id": "opt-c",
+              "text": "They expire too frequently",
+              "correct": false
+            },
+            {
+              "id": "opt-d",
+              "text": "They cannot contain special characters",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Exactly! The shared secret model means a copy of your credential exists on every server, creating a massive attack surface.",
+          "incorrectFeedback": "Not quite. The key issue is that passwords are shared secrets — both you and the server hold a copy, which means server breaches expose your credentials."
+        }
+      ]
+    },
+    {
+      "id": "les-f1-2",
+      "moduleId": "mod-f1",
+      "title": "The Cost of Credential Attacks",
+      "summary": "Understanding the business and personal cost of password-based breaches.",
+      "estimatedMinutes": 10,
+      "order": 2,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Financial Impact",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Credential-based attacks are among the most costly security incidents organizations face. The average cost of a data breach involving stolen credentials exceeds four million dollars, and that number continues to rise each year."
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            {
+              "title": "Direct Costs",
+              "text": "Incident response, forensics, legal fees, regulatory fines, customer notification, credit monitoring services, and system remediation."
+            },
+            {
+              "title": "Indirect Costs",
+              "text": "Brand damage, customer churn, lost business opportunities, increased insurance premiums, and long-term reputation harm."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "The Human Cost",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Beyond financial metrics, password breaches cause real harm to individuals. Identity theft, fraudulent transactions, and the stress of recovering compromised accounts affect millions of people every year."
+        },
+        {
+          "type": "callout",
+          "title": "Remember",
+          "text": "Every password breach is preventable if the password never existed in the first place. That is the promise of passkeys."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f1-2-1",
+          "title": "Quick Check",
+          "prompt": "Which of the following is an indirect cost of a credential-based breach?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Forensic investigation fees",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Regulatory fines",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "Customer churn and reputation damage",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "Customer notification mailings",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Correct! Customer churn and reputation damage are indirect costs that often exceed the direct financial impact of a breach.",
+          "incorrectFeedback": "That is actually a direct cost. Indirect costs include things like brand damage, lost business, and customer churn."
+        }
+      ]
+    },
+    {
+      "id": "les-f2-1",
+      "moduleId": "mod-f2",
+      "title": "Passkeys Explained",
+      "summary": "A clear, non-technical explanation of what passkeys are and how they work.",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "What Is a Passkey?",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A passkey is a digital credential that replaces passwords. Instead of creating and remembering a shared secret, your device creates a unique cryptographic key pair for each account. The private key stays on your device. The public key goes to the server."
+        },
+        {
+          "type": "paragraph",
+          "text": "When you sign in, your device proves it holds the private key without ever sending it. The server verifies the proof using the public key. No secret is ever shared, transmitted, or stored on the server."
+        },
+        {
+          "type": "callout",
+          "title": "Simple Analogy",
+          "text": "Think of a passkey like a lock and key system. You keep the key (private key) and give the server a lock (public key). When you want to prove your identity, you demonstrate you can open the lock — but you never hand over your key."
+        },
+        {
+          "type": "heading",
+          "text": "Where Do Passkeys Live?",
+          "level": 3
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "On your phone, tablet, or computer in secure hardware",
+            "Synced across your devices through your platform account (Apple, Google, Microsoft)",
+            "Optionally stored on a hardware security key like a YubiKey",
+            "Protected by your device's biometric (fingerprint, face) or screen lock"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "How Passkeys Differ from Passwords",
+          "level": 3
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            {
+              "title": "Passwords",
+              "text": "You create and memorize a secret. The server stores a copy. You type it to log in. It can be stolen, phished, leaked, or guessed."
+            },
+            {
+              "title": "Passkeys",
+              "text": "Your device creates a cryptographic key pair. The server stores only the public key. You authenticate with biometrics or device PIN. The private key never leaves your device."
+            }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f2-1-1",
+          "title": "Check Your Understanding",
+          "prompt": "What does the server store when you create a passkey?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Your private key",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "A hashed version of your password",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "Your public key only",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "Your biometric data",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Right! The server only stores your public key. Even if the server is breached, your credential remains safe because the private key was never shared.",
+          "incorrectFeedback": "Not quite. With passkeys, the server stores only your public key. Your private key and biometric data never leave your device."
+        }
+      ]
+    },
+    {
+      "id": "les-f2-2",
+      "moduleId": "mod-f2",
+      "title": "The Passkey Ecosystem",
+      "summary": "Understanding the platforms, standards, and organizations behind passkeys.",
+      "estimatedMinutes": 13,
+      "order": 2,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "FIDO Alliance and WebAuthn",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Passkeys are built on open standards developed by the FIDO Alliance and the W3C. The WebAuthn (Web Authentication) API is the browser standard that enables passkey-based sign-in on the web."
+        },
+        {
+          "type": "paragraph",
+          "text": "The FIDO Alliance is an industry association that includes Apple, Google, Microsoft, and hundreds of other companies working together to create authentication standards that are both more secure and easier to use than passwords."
+        },
+        {
+          "type": "heading",
+          "text": "Platform Support",
+          "level": 3
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Apple: iCloud Keychain syncs passkeys across iPhone, iPad, and Mac",
+            "Google: Google Password Manager syncs passkeys across Android devices and Chrome",
+            "Microsoft: Windows Hello supports passkey creation and authentication",
+            "Third-party password managers like 1Password, Dashlane, and Bitwarden are adding passkey support"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Growing Ecosystem",
+          "text": "Major services including Google, Apple, Microsoft, Amazon, PayPal, eBay, GitHub, and many others already support passkey sign-in. The ecosystem is expanding rapidly."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f2-2-1",
+          "title": "Quick Check",
+          "prompt": "Which standard powers passkey authentication in web browsers?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "OAuth 2.0",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "SAML",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "WebAuthn",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "OpenID Connect",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Correct! WebAuthn is the W3C standard that enables passkey authentication in web browsers, built on FIDO Alliance specifications.",
+          "incorrectFeedback": "That is a different authentication standard. WebAuthn (Web Authentication API) is the standard that powers passkeys in browsers."
+        }
+      ]
+    },
+    {
+      "id": "les-f3-1",
+      "moduleId": "mod-f3",
+      "title": "How Passkeys Stop Phishing",
+      "summary": "Understanding the technical design that makes passkeys resistant to phishing attacks.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Origin Binding",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Every passkey is cryptographically bound to the website origin (domain) where it was created. When your browser initiates a passkey authentication, it includes the actual origin of the website making the request."
+        },
+        {
+          "type": "paragraph",
+          "text": "If an attacker creates a fake login page at evil-bank.com pretending to be real-bank.com, the passkey simply will not work. The origin does not match, and the authenticator refuses to respond."
+        },
+        {
+          "type": "callout",
+          "title": "This Is Automatic",
+          "text": "You do not need to check URLs or look for lock icons. The origin verification happens at a cryptographic level before any credential is used. Humans cannot be tricked because humans are not part of the verification."
+        },
+        {
+          "type": "heading",
+          "text": "Why This Matters",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Phishing is the most common initial attack vector in data breaches. By removing the possibility of entering a credential on the wrong site, passkeys eliminate the entire category of phishing attacks against authentication."
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            {
+              "title": "Password Phishing",
+              "text": "A convincing fake page can trick any user into typing their password. The attacker receives the real credential and can use it immediately."
+            },
+            {
+              "title": "Passkey Phishing Attempt",
+              "text": "A fake page cannot trigger the real passkey. The origin mismatch causes the authentication to fail silently. The attacker gets nothing."
+            }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f3-1-1",
+          "title": "Check Your Understanding",
+          "prompt": "Why can't passkeys be phished?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Because they use longer key lengths than passwords",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Because they are cryptographically bound to the website origin",
+              "correct": true
+            },
+            {
+              "id": "opt-c",
+              "text": "Because they require biometric authentication",
+              "correct": false
+            },
+            {
+              "id": "opt-d",
+              "text": "Because they expire after each use",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Exactly! Origin binding means the passkey only works on the correct domain. Fake sites cannot trigger or intercept the real credential.",
+          "incorrectFeedback": "While passkeys do have strong properties, the specific anti-phishing mechanism is origin binding — the passkey is cryptographically tied to the domain and won't respond to a different site."
+        }
+      ]
+    },
+    {
+      "id": "les-f4-1",
+      "moduleId": "mod-f4",
+      "title": "Thinking in Passkeys",
+      "summary": "Building a practical mental model for how passkeys fit into your daily digital life.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "The New Mental Model",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "With passwords, you think: I need to remember a secret for every account. With passkeys, you think: My device holds my credentials, and I unlock them with my face, fingerprint, or PIN."
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "You visit a website and choose to sign in with a passkey",
+            "Your device asks you to verify your identity (biometric or PIN)",
+            "Your device sends a cryptographic proof to the website",
+            "You are signed in — no typing, no remembering, no risk of phishing"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Key Shifts in Thinking",
+          "level": 3
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            {
+              "title": "Old Thinking (Passwords)",
+              "text": "My security depends on choosing and remembering strong unique passwords. I need a password manager. I should change passwords regularly. I must watch out for phishing emails."
+            },
+            {
+              "title": "New Thinking (Passkeys)",
+              "text": "My security depends on keeping my device secure. I verify with biometrics. Each credential is unique automatically. Phishing is not possible against my passkey."
+            }
+          ]
+        },
+        {
+          "type": "scenario",
+          "title": "Daily Scenario",
+          "text": "You sit down at your laptop, visit your bank's website, and click Sign In. A prompt appears asking for your fingerprint. You touch the sensor. You are in. No password typed, no code from your phone, no secret to remember. This is the passkey experience."
+        },
+        {
+          "type": "callout",
+          "title": "Start Simple",
+          "text": "You do not need to convert every account at once. Start by enabling passkeys on the accounts where you feel most risk — your email, your bank, and your primary social accounts. Build the habit gradually."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-f4-1-1",
+          "title": "Check Your Understanding",
+          "prompt": "What is the primary way you verify your identity when using a passkey?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Typing a password",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Entering a one-time code from SMS",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "Using your device's biometric or screen lock",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "Answering security questions",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Correct! With passkeys, your identity is verified through your device's biometric sensor (fingerprint, face) or device PIN/screen lock.",
+          "incorrectFeedback": "With passkeys, you verify using your device's built-in biometric (fingerprint or face recognition) or your device PIN — not passwords, codes, or security questions."
+        }
+      ]
+    },
+    {
+      "id": "les-u1-1",
+      "moduleId": "mod-u1",
+      "title": "Passkeys Across Devices",
+      "summary": "How synced passkeys move with you when you change or add devices.",
+      "estimatedMinutes": 10,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Platform Sync",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Modern passkeys are synced through your platform account. If you use an iPhone, your passkeys sync through iCloud Keychain to all your Apple devices. On Android, they sync through your Google account."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Getting a new iPhone: Sign into iCloud and your passkeys are already there",
+            "Adding a new Android device: Sign into Google and your passkeys sync automatically",
+            "Using Windows: Windows Hello passkeys are available on that device; cross-platform passkeys may use a phone as an authenticator"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Cross-Platform Authentication",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "When you need to sign in on a device that does not have your passkeys (such as a friend's computer), you can use your phone as an authenticator. The website shows a QR code, you scan it with your phone, verify with biometrics, and you are signed in on the other device."
+        },
+        {
+          "type": "callout",
+          "title": "Practical Tip",
+          "text": "Always ensure your platform account (Apple ID, Google Account) has strong protection and recovery methods set up. Your passkeys live in that ecosystem."
+        }
+      ]
+    },
+    {
+      "id": "les-u1-2",
+      "moduleId": "mod-u1",
+      "title": "Switching Platforms",
+      "summary": "What to consider when moving between Apple, Google, and Microsoft ecosystems.",
+      "estimatedMinutes": 10,
+      "order": 2,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "The Platform Question",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Currently, passkeys sync within platform ecosystems but not easily between them. If you move from iPhone to Android, your iCloud passkeys do not automatically transfer to Google Password Manager."
+        },
+        {
+          "type": "heading",
+          "text": "Strategies for Platform Transitions",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Before switching, use a cross-platform password manager that supports passkeys (such as 1Password or Dashlane)",
+            "Re-register passkeys on your new device for critical accounts",
+            "Keep your old device accessible during the transition period",
+            "Ensure you have backup recovery methods for all important accounts"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Future Improvement",
+          "text": "The FIDO Alliance is actively working on the Credential Exchange Protocol (CXP), which will enable secure passkey transfer between different platforms and password managers."
+        }
+      ]
+    },
+    {
+      "id": "les-u2-1",
+      "moduleId": "mod-u2",
+      "title": "Recovery Without Passwords",
+      "summary": "How account recovery works when passwords are no longer the fallback.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Rethinking Recovery",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "In a password world, recovery usually means resetting your password via email. In a passkey world, recovery means establishing your identity through alternative means so you can register a new passkey."
+        },
+        {
+          "type": "heading",
+          "text": "Common Recovery Approaches",
+          "level": 3
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Platform account recovery: Recover your Apple ID or Google Account to regain synced passkeys",
+            "Multiple registered passkeys: Register passkeys on more than one device as a backup",
+            "Hardware security key: Keep a physical security key in a safe place as an emergency backup",
+            "Service-specific recovery flows: Some services offer recovery codes or trusted contact recovery"
+          ]
+        },
+        {
+          "type": "scenario",
+          "title": "Recovery Scenario",
+          "text": "You lose your phone and do not have another registered device. You use your hardware security key (stored in a safe at home) to authenticate, then register a new passkey on your replacement phone. You are back in business without any passwords."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-u2-1-1",
+          "title": "Check Your Understanding",
+          "prompt": "What is the best practice for passkey recovery preparedness?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Keep your password as a fallback",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Register passkeys on multiple devices and keep a hardware security key as backup",
+              "correct": true
+            },
+            {
+              "id": "opt-c",
+              "text": "Write down your private key",
+              "correct": false
+            },
+            {
+              "id": "opt-d",
+              "text": "Use the same passkey across all accounts",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Exactly! Having passkeys on multiple devices and a hardware backup key gives you redundancy without falling back to passwords.",
+          "incorrectFeedback": "The best approach is registering passkeys on multiple devices and keeping a hardware security key as a backup. You cannot write down a private key (it is in secure hardware), and each passkey is unique per account."
+        }
+      ]
+    },
+    {
+      "id": "les-u3-1",
+      "moduleId": "mod-u3",
+      "title": "Getting Started with Passkeys",
+      "summary": "A practical step-by-step guide to beginning your passkey journey.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Your First Passkey",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Choose a high-value account to start with (Google, Apple, Microsoft, or your bank)",
+            "Go to the security settings of that account",
+            "Look for Passkey, Security Key, or Sign-in options",
+            "Follow the prompts to create a passkey — usually a single biometric verification",
+            "Test signing out and back in using your new passkey",
+            "Repeat for your next most important account"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Start Where Risk Is Highest",
+          "text": "Your email account is often the master key to other accounts through password reset. Making it passkey-protected first provides the most security improvement."
+        },
+        {
+          "type": "heading",
+          "text": "Building the Habit",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Do not try to convert everything at once. Add passkeys to one or two accounts per week. Within a month, your most important accounts will be protected by phishing-resistant credentials."
+        }
+      ]
+    },
+    {
+      "id": "les-t1-1",
+      "moduleId": "mod-t1",
+      "title": "WebAuthn Architecture",
+      "summary": "Understanding the three roles in the WebAuthn ceremony: Relying Party, Client, and Authenticator.",
+      "estimatedMinutes": 12,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "The Three Roles",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "WebAuthn defines three distinct roles that interact during registration and authentication ceremonies."
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Relying Party (RP): The website or service that wants to authenticate the user. It generates challenges and verifies responses.",
+            "Client: The browser or platform that mediates between the RP and the authenticator. It enforces origin checks and manages the WebAuthn API.",
+            "Authenticator: The component that holds the private key and performs cryptographic operations. This can be built into the device (platform authenticator) or external (roaming authenticator like a security key)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Registration Ceremony",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "During registration, the RP sends a challenge and creation options. The client passes these to the authenticator, which generates a new key pair. The public key and an attestation are returned to the RP for storage."
+        },
+        {
+          "type": "heading",
+          "text": "Authentication Ceremony",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "During authentication, the RP sends a challenge. The authenticator signs the challenge with the private key. The RP verifies the signature using the stored public key. If it matches, authentication succeeds."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-t1-1-1",
+          "title": "Architecture Check",
+          "prompt": "Which component enforces origin checking during WebAuthn ceremonies?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "The Relying Party",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "The Authenticator",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "The Client (browser)",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "The DNS server",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Correct! The client (browser) is responsible for verifying that the origin in the request matches the actual site origin before passing the request to the authenticator.",
+          "incorrectFeedback": "The origin check is performed by the client (browser), which acts as a trusted mediator between the Relying Party and the Authenticator."
+        }
+      ]
+    },
+    {
+      "id": "les-t1-2",
+      "moduleId": "mod-t1",
+      "title": "Authenticator Types",
+      "summary": "Platform vs. roaming authenticators and when to use each.",
+      "estimatedMinutes": 13,
+      "order": 2,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Platform Authenticators",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A platform authenticator is built into the device — such as Touch ID on a Mac, Face ID on an iPhone, or Windows Hello on a PC. These create synced passkeys that can be backed up and restored through the platform vendor."
+        },
+        {
+          "type": "heading",
+          "text": "Roaming Authenticators",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "A roaming authenticator is an external device, typically a USB or NFC security key. These create device-bound passkeys that cannot be duplicated or extracted, providing the highest assurance level."
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            {
+              "title": "Platform (Synced) Passkeys",
+              "text": "Convenient, backed up automatically, available across devices in the same ecosystem. Great for consumer accounts and general use."
+            },
+            {
+              "title": "Roaming (Device-Bound) Passkeys",
+              "text": "Highest security assurance, not copyable, requires physical possession. Ideal for high-security environments and backup recovery credentials."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "les-t2-1",
+      "moduleId": "mod-t2",
+      "title": "Asymmetric Cryptography Basics",
+      "summary": "How public-key cryptography enables passwordless authentication without shared secrets.",
+      "estimatedMinutes": 20,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Public and Private Keys",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Asymmetric (public-key) cryptography uses mathematically related key pairs. The private key can create digital signatures that the public key can verify. However, knowing the public key does not allow you to derive the private key."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the core property that makes passkeys secure: the server holds the public key and can verify your identity, but cannot impersonate you because it never has the private key."
+        },
+        {
+          "type": "heading",
+          "text": "The Challenge-Response Flow",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Server generates a random challenge (a unique nonce)",
+            "Challenge is sent to the client",
+            "The authenticator signs the challenge with the private key",
+            "The signed response is sent back to the server",
+            "The server verifies the signature using the stored public key",
+            "If verification succeeds, the user is authenticated"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "No Shared Secrets",
+          "text": "Unlike passwords, where the secret must be known by both parties, public-key authentication never requires the server to know or store anything secret. A database breach reveals only public keys, which are useless to attackers."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-t2-1-1",
+          "title": "Crypto Check",
+          "prompt": "If an attacker steals the server's database of public keys, what can they do?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Impersonate users on other websites",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Derive private keys from the public keys",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "Nothing useful — public keys cannot be used to authenticate",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "Create new passkeys for those accounts",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Exactly! Public keys are designed to be public. An attacker cannot use them to sign challenges or impersonate users. The private key is needed for that, and it was never on the server.",
+          "incorrectFeedback": "Public keys cannot be reversed to obtain private keys. Stealing a database of public keys gives the attacker nothing useful for authentication."
+        }
+      ]
+    },
+    {
+      "id": "les-t3-1",
+      "moduleId": "mod-t3",
+      "title": "Designing Secure Fallbacks",
+      "summary": "How to handle edge cases and fallback authentication without undermining passkey security.",
+      "estimatedMinutes": 20,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "The Fallback Paradox",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "If a service offers passkey login but falls back to a password when the passkey is unavailable, the overall security is still limited by the password. An attacker will simply target the weaker method."
+        },
+        {
+          "type": "callout",
+          "title": "Critical Design Principle",
+          "text": "Your authentication system is only as strong as its weakest fallback path. If passwords remain an active fallback, phishing resistance is not truly achieved."
+        },
+        {
+          "type": "heading",
+          "text": "Recommended Fallback Design",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Require registration of at least two passkeys (e.g., phone and security key)",
+            "If only one passkey exists, encourage registration of a backup during the sign-up flow",
+            "Use identity verification (document check, trusted contact) rather than password reset for recovery",
+            "Implement rate limiting and anomaly detection on recovery flows",
+            "Consider offering time-delayed recovery with notification to reduce account takeover risk"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Migration Strategy",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Migrating from passwords to passkeys should be gradual. Start by offering passkeys alongside passwords, then encourage passkey adoption, then offer a password removal option for users who are ready, and eventually phase out password authentication entirely."
+        }
+      ]
+    },
+    {
+      "id": "les-l1-1",
+      "moduleId": "mod-l1",
+      "title": "Building an Adoption Roadmap",
+      "summary": "Strategic planning for rolling out passkeys across an organization.",
+      "estimatedMinutes": 20,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Phased Adoption Approach",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Phase 1 — Awareness: Educate stakeholders about passkey benefits and the password problem",
+            "Phase 2 — Pilot: Deploy passkeys to a small group of willing early adopters (IT team, security team)",
+            "Phase 3 — Enable: Offer passkeys as an option for all employees alongside existing methods",
+            "Phase 4 — Encourage: Promote passkey adoption through nudges, training, and incentives",
+            "Phase 5 — Default: Make passkeys the default authentication method with password as opt-in fallback",
+            "Phase 6 — Enforce: Remove password option for users who have registered passkeys"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Success Metric",
+          "text": "Track passkey registration rates, authentication success rates, and helpdesk ticket volume. A successful rollout should show increasing passkey usage and decreasing password reset requests."
+        },
+        {
+          "type": "heading",
+          "text": "Stakeholder Buy-In",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Present passkey adoption as both a security improvement and a user experience improvement. Reduced password resets mean lower helpdesk costs. Eliminated phishing means lower incident response costs. Faster sign-ins mean improved productivity."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-l1-1-1",
+          "title": "Strategy Check",
+          "prompt": "What is the recommended first phase of organizational passkey adoption?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Immediately require all employees to use passkeys",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Remove passwords from all systems",
+              "correct": false
+            },
+            {
+              "id": "opt-c",
+              "text": "Educate stakeholders about passkey benefits and the password problem",
+              "correct": true
+            },
+            {
+              "id": "opt-d",
+              "text": "Deploy hardware security keys to all employees",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Right! Starting with awareness and education lays the foundation for smooth adoption. Trying to force adoption without understanding leads to resistance.",
+          "incorrectFeedback": "The recommended approach starts with awareness and education. Forcing immediate adoption or removing existing methods before people understand the alternative creates resistance and support burden."
+        }
+      ]
+    },
+    {
+      "id": "les-l2-1",
+      "moduleId": "mod-l2",
+      "title": "Policy Alignment",
+      "summary": "Aligning passkey deployment with existing security policies and compliance frameworks.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Compliance Considerations",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Passkeys can strengthen compliance posture across many frameworks. NIST, PCI DSS, and other standards increasingly recognize FIDO-based authentication as a strong authentication method."
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "NIST SP 800-63B recognizes FIDO authenticators at AAL2 and AAL3 levels",
+            "PCI DSS v4.0 encourages phishing-resistant MFA for administrative access",
+            "Many cyber insurance providers are beginning to offer improved terms for organizations using phishing-resistant authentication",
+            "Zero Trust architectures align naturally with passkey-based identity verification"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Policy Updates Required",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "Deploying passkeys may require updates to your organization's authentication policy, acceptable use policy, device management requirements, and incident response procedures. Plan for these documentation updates as part of your rollout."
+        }
+      ]
+    },
+    {
+      "id": "les-l3-1",
+      "moduleId": "mod-l3",
+      "title": "Recovery Governance Framework",
+      "summary": "Establishing clear governance for account recovery in a passwordless environment.",
+      "estimatedMinutes": 15,
+      "order": 1,
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Recovery Is a Governance Problem",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "text": "In a passwordless world, account recovery becomes one of the most critical governance processes. Without passwords as a fallback, organizations must define clear, secure, and auditable recovery procedures."
+        },
+        {
+          "type": "heading",
+          "text": "Recovery Governance Principles",
+          "level": 3
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Define recovery tiers based on account sensitivity (standard accounts vs. privileged accounts)",
+            "Require identity verification proportional to the account's risk level",
+            "Implement mandatory waiting periods for high-risk account recovery",
+            "Notify users through multiple channels when recovery is initiated",
+            "Log and audit all recovery events",
+            "Regularly test recovery procedures and update them based on findings"
+          ]
+        },
+        {
+          "type": "scenario",
+          "title": "Governance Scenario",
+          "text": "A senior executive loses their phone and laptop in a travel incident. They need access to critical systems. Your recovery governance framework should define exactly who can authorize the recovery, what identity verification is required, what waiting period applies, and who is notified — before this situation ever occurs."
+        },
+        {
+          "type": "callout",
+          "title": "Design Recovery Before You Need It",
+          "text": "The worst time to design a recovery process is during an emergency. Build and test your recovery governance framework before removing password fallbacks."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-l3-1-1",
+          "title": "Governance Check",
+          "prompt": "When should an organization define its passkey recovery governance framework?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "After the first account lockout incident",
+              "correct": false
+            },
+            {
+              "id": "opt-b",
+              "text": "Before removing password fallbacks",
+              "correct": true
+            },
+            {
+              "id": "opt-c",
+              "text": "Only for privileged accounts",
+              "correct": false
+            },
+            {
+              "id": "opt-d",
+              "text": "Recovery governance is not needed with passkeys",
+              "correct": false
+            }
+          ],
+          "correctFeedback": "Correct! Recovery governance must be designed, documented, and tested before password fallbacks are removed. Proactive planning prevents emergency improvisation.",
+          "incorrectFeedback": "Recovery governance should be established before removing password fallbacks. Waiting until an incident occurs or assuming it is not needed creates significant risk."
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Passkey",
+      "definition": "A FIDO credential that replaces passwords with cryptographic key pairs. The private key stays on the user's device; the public key is stored by the service.",
+      "category": "Core"
+    },
+    {
+      "term": "WebAuthn",
+      "definition": "The W3C Web Authentication API standard that enables passkey-based authentication in web browsers.",
+      "category": "Standards"
+    },
+    {
+      "term": "FIDO Alliance",
+      "definition": "An open industry association that develops authentication standards including FIDO2 and passkeys.",
+      "category": "Standards"
+    },
+    {
+      "term": "Relying Party (RP)",
+      "definition": "The website or service that requests authentication. In WebAuthn, this is the entity that generates challenges and verifies responses.",
+      "category": "Technical"
+    },
+    {
+      "term": "Authenticator",
+      "definition": "The component that holds private keys and performs cryptographic operations during WebAuthn ceremonies. Can be a platform authenticator (built-in) or a roaming authenticator (external).",
+      "category": "Technical"
+    },
+    {
+      "term": "Platform Authenticator",
+      "definition": "An authenticator built into the user's device, such as Touch ID, Face ID, or Windows Hello. Creates synced passkeys.",
+      "category": "Technical"
+    },
+    {
+      "term": "Roaming Authenticator",
+      "definition": "An external authenticator such as a USB or NFC security key. Creates device-bound passkeys that cannot be extracted.",
+      "category": "Technical"
+    },
+    {
+      "term": "Origin Binding",
+      "definition": "The security property where a passkey is cryptographically tied to the domain (origin) where it was created, preventing phishing.",
+      "category": "Security"
+    },
+    {
+      "term": "Challenge-Response",
+      "definition": "An authentication pattern where the server sends a random challenge and the client signs it with a private key to prove identity.",
+      "category": "Technical"
+    },
+    {
+      "term": "Public Key",
+      "definition": "The non-secret half of an asymmetric key pair. Stored by the server and used to verify signatures created by the corresponding private key.",
+      "category": "Cryptography"
+    },
+    {
+      "term": "Private Key",
+      "definition": "The secret half of an asymmetric key pair. Stored securely on the user's device and never transmitted to the server.",
+      "category": "Cryptography"
+    },
+    {
+      "term": "Attestation",
+      "definition": "A cryptographic statement from the authenticator that provides information about its type and trustworthiness during registration.",
+      "category": "Technical"
+    },
+    {
+      "term": "Credential Exchange Protocol (CXP)",
+      "definition": "A FIDO Alliance specification under development to enable secure transfer of passkeys between different platforms and password managers.",
+      "category": "Standards"
+    },
+    {
+      "term": "Phishing Resistance",
+      "definition": "A security property of authentication methods that cannot be defeated by tricking users into entering credentials on fake websites.",
+      "category": "Security"
+    },
+    {
+      "term": "Synced Passkey",
+      "definition": "A passkey that is backed up and synchronized across devices through a platform vendor (Apple, Google, Microsoft) or password manager.",
+      "category": "Core"
+    },
+    {
+      "term": "Device-Bound Passkey",
+      "definition": "A passkey that exists only on a single device and cannot be exported, synced, or duplicated. Typically created by hardware security keys.",
+      "category": "Core"
+    },
+    {
+      "term": "Credential Stuffing",
+      "definition": "An automated attack that tests large numbers of stolen username-password pairs against multiple websites to find reused credentials.",
+      "category": "Security"
+    },
+    {
+      "term": "AAL (Authenticator Assurance Level)",
+      "definition": "A NIST classification (AAL1, AAL2, AAL3) indicating the strength of an authentication process. FIDO authenticators can meet AAL2 or AAL3.",
+      "category": "Standards"
+    }
+  ],
+  "references": [
+    {
+      "title": "FIDO Alliance — Passkeys",
+      "url": "https://fidoalliance.org/passkeys/"
+    },
+    {
+      "title": "W3C Web Authentication (WebAuthn) Specification",
+      "url": "https://www.w3.org/TR/webauthn-2/"
+    },
+    {
+      "title": "Passkeys.dev — Developer Resources",
+      "url": "https://passkeys.dev/"
+    },
+    {
+      "title": "NIST SP 800-63B — Digital Identity Guidelines",
+      "url": "https://pages.nist.gov/800-63-3/sp800-63b.html"
+    },
+    {
+      "title": "Apple — About Passkeys",
+      "url": "https://support.apple.com/en-us/102195"
+    },
+    {
+      "title": "Google — Passkeys on Android and Chrome",
+      "url": "https://developers.google.com/identity/passkeys"
+    }
+  ]
+}
