@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnFlow</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="app-shell">
+    <nav class="sidebar" aria-label="Main navigation">
+      <div class="sidebar-header">
+        <span class="sidebar-logo" aria-hidden="true">📘</span>
+        <span class="sidebar-brand">LearnFlow</span>
+      </div>
+      <ul class="sidebar-nav" role="list">
+        <li><a href="#/home" class="nav-link" data-route="home">
+          <span class="nav-icon" aria-hidden="true">🏠</span> Home
+        </a></li>
+        <li><a href="#/glossary" class="nav-link" data-route="glossary">
+          <span class="nav-icon" aria-hidden="true">📖</span> Glossary
+        </a></li>
+        <li><a href="#/progress" class="nav-link" data-route="progress">
+          <span class="nav-icon" aria-hidden="true">📊</span> Progress
+        </a></li>
+        <li><a href="#/settings" class="nav-link" data-route="settings">
+          <span class="nav-icon" aria-hidden="true">⚙️</span> Settings
+        </a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <p class="sidebar-version">v1.0.0</p>
+      </div>
+    </nav>
+
+    <main id="main-content" class="main-content" role="main" aria-live="polite">
+      <div id="app-view" class="view-container">
+        <!-- Dynamic content rendered here -->
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,1702 @@
+{
+  "id": "mcp-v1",
+  "title": "Model Context Protocol (MCP)",
+  "version": "1.0.0",
+  "language": "en",
+  "description": "A comprehensive curriculum covering the Model Context Protocol — from foundational concepts through protocol internals, primitives, server development, and security best practices for adult learners.",
+  "level": "mixed",
+  "estimatedMinutes": 180,
+  "author": "Claude",
+
+  "tracks": [
+    {
+      "id": "track-foundations",
+      "title": "MCP Foundations",
+      "description": "Understand what MCP is, the problem it solves, and the core mental model behind context-aware AI integrations.",
+      "level": "beginner",
+      "estimatedMinutes": 35,
+      "moduleIds": ["mod-what-is-mcp", "mod-why-mcp", "mod-mental-model"]
+    },
+    {
+      "id": "track-architecture",
+      "title": "Architecture & Protocol Deep Dive",
+      "description": "Explore the client-server architecture, transport mechanisms, and the JSON-RPC protocol lifecycle that powers MCP.",
+      "level": "intermediate",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-architecture", "mod-transports", "mod-lifecycle"]
+    },
+    {
+      "id": "track-primitives",
+      "title": "MCP Primitives",
+      "description": "Master the five core primitives that MCP servers expose: Tools, Resources, Prompts, Sampling, and Roots.",
+      "level": "intermediate",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-tools", "mod-resources", "mod-prompts-sampling-roots"]
+    },
+    {
+      "id": "track-building",
+      "title": "Building MCP Servers",
+      "description": "Hands-on guidance for constructing MCP servers in TypeScript and Python using the official SDKs.",
+      "level": "advanced",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-server-setup", "mod-typescript-server", "mod-python-server"]
+    },
+    {
+      "id": "track-security",
+      "title": "Security, Trust & Best Practices",
+      "description": "Understand the threat model, human-in-the-loop principles, and production hardening strategies for MCP deployments.",
+      "level": "advanced",
+      "estimatedMinutes": 25,
+      "moduleIds": ["mod-threat-model", "mod-production-hardening"]
+    }
+  ],
+
+  "modules": [
+    {
+      "id": "mod-what-is-mcp",
+      "title": "What Is MCP?",
+      "description": "An introduction to the Model Context Protocol and the ecosystem it enables.",
+      "trackId": "track-foundations",
+      "order": 1,
+      "estimatedMinutes": 12,
+      "lessonIds": ["lesson-mcp-overview", "lesson-ecosystem"]
+    },
+    {
+      "id": "mod-why-mcp",
+      "title": "Why MCP Matters",
+      "description": "The problems MCP solves and the landscape before standardized context protocols.",
+      "trackId": "track-foundations",
+      "order": 2,
+      "estimatedMinutes": 12,
+      "lessonIds": ["lesson-integration-problem", "lesson-standardization"]
+    },
+    {
+      "id": "mod-mental-model",
+      "title": "The MCP Mental Model",
+      "description": "Build an intuitive understanding of how hosts, clients, and servers relate.",
+      "trackId": "track-foundations",
+      "order": 3,
+      "estimatedMinutes": 11,
+      "lessonIds": ["lesson-usb-analogy", "lesson-host-client-server"]
+    },
+    {
+      "id": "mod-architecture",
+      "title": "Client-Server Architecture",
+      "description": "How MCP structures communication between AI applications and external systems.",
+      "trackId": "track-architecture",
+      "order": 1,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-architecture-overview", "lesson-capability-negotiation"]
+    },
+    {
+      "id": "mod-transports",
+      "title": "Transport Mechanisms",
+      "description": "The communication layers MCP supports: stdio, HTTP with SSE, and Streamable HTTP.",
+      "trackId": "track-architecture",
+      "order": 2,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-stdio-transport", "lesson-http-transports"]
+    },
+    {
+      "id": "mod-lifecycle",
+      "title": "Protocol Lifecycle",
+      "description": "The full lifecycle of an MCP connection from initialization through operation to shutdown.",
+      "trackId": "track-architecture",
+      "order": 3,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-initialization", "lesson-message-types"]
+    },
+    {
+      "id": "mod-tools",
+      "title": "Tools",
+      "description": "How MCP servers expose executable functions that AI models can invoke.",
+      "trackId": "track-primitives",
+      "order": 1,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-tools-concept", "lesson-tool-definition"]
+    },
+    {
+      "id": "mod-resources",
+      "title": "Resources",
+      "description": "How MCP servers expose structured data that AI applications can read.",
+      "trackId": "track-primitives",
+      "order": 2,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-resources-concept", "lesson-resource-templates"]
+    },
+    {
+      "id": "mod-prompts-sampling-roots",
+      "title": "Prompts, Sampling & Roots",
+      "description": "The remaining MCP primitives: reusable prompt templates, server-initiated LLM requests, and filesystem roots.",
+      "trackId": "track-primitives",
+      "order": 3,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-prompts", "lesson-sampling-roots"]
+    },
+    {
+      "id": "mod-server-setup",
+      "title": "Server Development Setup",
+      "description": "Prerequisites, SDK installation, and project scaffolding for MCP server development.",
+      "trackId": "track-building",
+      "order": 1,
+      "estimatedMinutes": 12,
+      "lessonIds": ["lesson-dev-prerequisites", "lesson-sdk-installation"]
+    },
+    {
+      "id": "mod-typescript-server",
+      "title": "Building a TypeScript MCP Server",
+      "description": "Step-by-step construction of an MCP server using the TypeScript SDK.",
+      "trackId": "track-building",
+      "order": 2,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-ts-scaffold", "lesson-ts-tools-resources"]
+    },
+    {
+      "id": "mod-python-server",
+      "title": "Building a Python MCP Server",
+      "description": "Step-by-step construction of an MCP server using the Python SDK.",
+      "trackId": "track-building",
+      "order": 3,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-py-scaffold", "lesson-py-tools-resources"]
+    },
+    {
+      "id": "mod-threat-model",
+      "title": "MCP Threat Model",
+      "description": "Understanding the security risks inherent in connecting AI models to external systems via MCP.",
+      "trackId": "track-security",
+      "order": 1,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-attack-surfaces", "lesson-trust-boundaries"]
+    },
+    {
+      "id": "mod-production-hardening",
+      "title": "Production Hardening",
+      "description": "Best practices for deploying MCP servers safely in production environments.",
+      "trackId": "track-security",
+      "order": 2,
+      "estimatedMinutes": 12,
+      "lessonIds": ["lesson-human-in-the-loop", "lesson-deployment-checklist"]
+    }
+  ],
+
+  "lessons": [
+    {
+      "id": "lesson-mcp-overview",
+      "title": "Introducing the Model Context Protocol",
+      "moduleId": "mod-what-is-mcp",
+      "order": 1,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Is MCP?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Model Context Protocol (MCP) is an open standard originally developed by Anthropic that defines how AI applications communicate with external data sources and tools. Think of it as a universal adapter that lets large language models (LLMs) reach beyond their training data to interact with live systems — databases, APIs, file systems, and more — through a single, consistent protocol."
+        },
+        {
+          "type": "paragraph",
+          "text": "Before MCP, every integration between an AI application and an external system required a custom connector. Each connector had its own authentication flow, data format, and error handling. MCP replaces that fragmented approach with one standardized protocol that any compliant client and server can speak."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "MCP is to AI integrations what USB became to peripheral devices — a single standard that eliminated the need for dozens of proprietary cables."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Key Characteristics"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Open standard — anyone can implement clients and servers",
+            "Transport-agnostic — works over local stdio or remote HTTP",
+            "Bidirectional — both client and server can initiate requests",
+            "Capability-driven — clients and servers negotiate what features they support"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-mcp-overview-1",
+          "title": "Knowledge Check",
+          "prompt": "What best describes the Model Context Protocol?",
+          "options": [
+            { "id": "a", "text": "A proprietary API for Claude models only" },
+            { "id": "b", "text": "An open standard for AI applications to communicate with external data sources and tools", "correct": true },
+            { "id": "c", "text": "A database query language for LLMs" },
+            { "id": "d", "text": "A fine-tuning framework for language models" }
+          ],
+          "correctFeedback": "Correct! MCP is an open standard that defines how any AI application can communicate with external tools and data sources through a consistent protocol.",
+          "incorrectFeedback": "Not quite. MCP is an open standard that defines how any AI application can communicate with external tools and data sources — it is not proprietary, nor limited to databases or fine-tuning."
+        }
+      ]
+    },
+    {
+      "id": "lesson-ecosystem",
+      "title": "The MCP Ecosystem",
+      "moduleId": "mod-what-is-mcp",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Who Uses MCP?"
+        },
+        {
+          "type": "paragraph",
+          "text": "The MCP ecosystem is growing rapidly. AI-powered applications like Claude Desktop, Cursor, Windsurf, and various IDE extensions serve as MCP hosts. Meanwhile, a rich catalog of community-built MCP servers provides integrations with services like GitHub, Slack, PostgreSQL, Google Drive, and many more."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Ecosystem Participants"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "MCP Hosts — Claude Desktop, Cursor, Windsurf, Continue, Cline",
+            "MCP Servers — GitHub MCP Server, Slack MCP Server, Filesystem Server, Database Servers",
+            "SDK Providers — Official TypeScript SDK, Official Python SDK, Community SDKs (Kotlin, C#, etc.)",
+            "Specification — The MCP open specification hosted at spec.modelcontextprotocol.io"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "You can browse the official directory of MCP servers and clients at modelcontextprotocol.io to see what integrations are already available before building your own."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-ecosystem-1",
+          "title": "Knowledge Check",
+          "prompt": "Which of the following is an example of an MCP host?",
+          "options": [
+            { "id": "a", "text": "PostgreSQL database" },
+            { "id": "b", "text": "Claude Desktop", "correct": true },
+            { "id": "c", "text": "The MCP specification document" },
+            { "id": "d", "text": "A REST API endpoint" }
+          ],
+          "correctFeedback": "Correct! Claude Desktop is an AI application that acts as an MCP host — it contains MCP clients that connect to MCP servers on behalf of the user.",
+          "incorrectFeedback": "Not quite. An MCP host is a user-facing AI application. Claude Desktop is the host; databases and APIs are typically wrapped by MCP servers, not hosts."
+        }
+      ]
+    },
+    {
+      "id": "lesson-integration-problem",
+      "title": "The M×N Integration Problem",
+      "moduleId": "mod-why-mcp",
+      "order": 1,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Problem MCP Solves"
+        },
+        {
+          "type": "paragraph",
+          "text": "Imagine you have 5 AI applications and 10 external services. Without a standard protocol, you need 5 × 10 = 50 custom integrations. Each one must handle authentication, data formatting, error handling, and versioning independently. This is the M×N integration problem."
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP collapses this complexity. Each AI application implements one MCP client, and each external service implements one MCP server. Now you need only 5 + 10 = 15 implementations instead of 50. Every client can talk to every server automatically."
+        },
+        {
+          "type": "scenario",
+          "label": "Real-World Scenario",
+          "text": "A development team builds an AI-powered code assistant. Without MCP, they write separate plugins for GitHub, Jira, Confluence, and their internal docs. With MCP, they implement one MCP client. Now any MCP-compliant server — GitHub, Jira, or a custom internal server — works out of the box."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-integration-1",
+          "title": "Knowledge Check",
+          "prompt": "How does MCP reduce integration complexity?",
+          "options": [
+            { "id": "a", "text": "By requiring all services to use the same database" },
+            { "id": "b", "text": "By converting an M×N problem into an M+N problem through a shared standard", "correct": true },
+            { "id": "c", "text": "By eliminating the need for external services" },
+            { "id": "d", "text": "By caching all external data locally" }
+          ],
+          "correctFeedback": "Correct! MCP converts the M×N integration problem into M+N by providing a single standard protocol. Each application implements one client, each service implements one server, and they all interoperate.",
+          "incorrectFeedback": "Not quite. MCP reduces complexity by standardizing the protocol so each side only needs one implementation, turning M×N custom integrations into M+N standard ones."
+        }
+      ]
+    },
+    {
+      "id": "lesson-standardization",
+      "title": "The Value of Standardization",
+      "moduleId": "mod-why-mcp",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Why a Standard Protocol?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Standardization brings predictability. When every MCP server follows the same specification, client developers know exactly what to expect: the same message format, the same lifecycle, the same capability negotiation. This dramatically reduces the learning curve and the surface area for bugs."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Benefits of Standardization"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Interoperability — any compliant client works with any compliant server",
+            "Ecosystem growth — developers contribute servers that benefit all hosts",
+            "Reduced duplication — shared SDKs and tooling instead of per-integration libraries",
+            "Easier auditing — one protocol to secure rather than dozens of custom connectors",
+            "Faster onboarding — learn MCP once, apply everywhere"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "The MCP specification is versioned and follows a well-defined evolution process, ensuring backward compatibility as the protocol matures."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-standardization-1",
+          "title": "Knowledge Check",
+          "prompt": "Which is NOT a benefit of MCP standardization?",
+          "options": [
+            { "id": "a", "text": "Any compliant client can work with any compliant server" },
+            { "id": "b", "text": "Developers must learn a different protocol for each integration", "correct": true },
+            { "id": "c", "text": "Shared SDKs reduce duplicated effort" },
+            { "id": "d", "text": "A single protocol is easier to audit for security" }
+          ],
+          "correctFeedback": "Correct! Having to learn a different protocol per integration is exactly the problem MCP eliminates — it is not a benefit of standardization.",
+          "incorrectFeedback": "Not quite. Look for the option that describes a problem rather than a benefit. MCP standardization means developers learn one protocol, not many."
+        }
+      ]
+    },
+    {
+      "id": "lesson-usb-analogy",
+      "title": "The USB Analogy",
+      "moduleId": "mod-mental-model",
+      "order": 1,
+      "estimatedMinutes": 5,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "MCP as a Universal Port"
+        },
+        {
+          "type": "paragraph",
+          "text": "The most common analogy for MCP is USB. Before USB, every peripheral — printers, keyboards, mice, cameras — required its own proprietary cable and port. USB gave us one standard port that works with any compliant device."
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP does the same for AI. Instead of building custom connectors for every data source or tool, AI applications expose a standard MCP port. Any MCP server can plug in and immediately provide its capabilities."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "USB to MCP Mapping"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Computer → AI Host Application",
+            "USB Port → MCP Client",
+            "USB Device → MCP Server",
+            "USB Standard → MCP Specification",
+            "Device Driver → Server Capabilities"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Just like USB devices can be hot-plugged, MCP servers can be dynamically discovered and connected to running AI applications."
+        }
+      ]
+    },
+    {
+      "id": "lesson-host-client-server",
+      "title": "Hosts, Clients & Servers",
+      "moduleId": "mod-mental-model",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Three Roles"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP defines three distinct roles that work together. Understanding these roles is essential before diving deeper into the protocol."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "MCP Host"
+        },
+        {
+          "type": "paragraph",
+          "text": "The host is the AI application the user interacts with directly — such as Claude Desktop or an AI-enabled IDE. The host manages one or more MCP clients, controls which servers are connected, and enforces security policies like user consent for tool invocations."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "MCP Client"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each MCP client lives inside the host and maintains a one-to-one connection with a single MCP server. The client handles protocol negotiation, sends requests and notifications, and relays server capabilities back to the host."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "MCP Server"
+        },
+        {
+          "type": "paragraph",
+          "text": "An MCP server is a lightweight program that exposes specific capabilities — tools, resources, or prompts — to connected clients. Each server typically wraps a single external system, such as a database, an API, or a local file system."
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "A common mistake is confusing the host with the client. The host is the user-facing application; the client is the protocol-level connector embedded within it. One host can contain many clients."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-roles-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the relationship between an MCP host and an MCP client?",
+          "options": [
+            { "id": "a", "text": "They are the same thing" },
+            { "id": "b", "text": "The host contains one or more clients, each connected to a different server", "correct": true },
+            { "id": "c", "text": "The client contains the host" },
+            { "id": "d", "text": "Hosts and clients never interact directly" }
+          ],
+          "correctFeedback": "Correct! The host is the user-facing AI application. It contains one or more MCP clients, each maintaining a one-to-one connection with a separate MCP server.",
+          "incorrectFeedback": "Not quite. The host is the application the user interacts with, and it contains one or more MCP clients inside it — each client connects to one server."
+        }
+      ]
+    },
+    {
+      "id": "lesson-architecture-overview",
+      "title": "Architecture Overview",
+      "moduleId": "mod-architecture",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How MCP Is Structured"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP follows a client-server architecture built on top of JSON-RPC 2.0. The protocol is stateful — connections are established, capabilities are negotiated, and then the session remains active for ongoing communication."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Architectural Layers"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Protocol layer — JSON-RPC 2.0 message framing (requests, responses, notifications)",
+            "Transport layer — how bytes move between client and server (stdio, HTTP+SSE, Streamable HTTP)",
+            "Capability layer — what features the client and server each support (tools, resources, prompts, etc.)",
+            "Application layer — the host application that orchestrates clients and presents results to the user"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "MCP uses JSON-RPC 2.0 as its wire format. Every message is a JSON object with a 'jsonrpc' field set to '2.0', plus either a 'method' (for requests/notifications) or a 'result'/'error' (for responses)."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-architecture-1",
+          "title": "Knowledge Check",
+          "prompt": "What wire format does MCP use?",
+          "options": [
+            { "id": "a", "text": "Protocol Buffers (protobuf)" },
+            { "id": "b", "text": "GraphQL" },
+            { "id": "c", "text": "JSON-RPC 2.0", "correct": true },
+            { "id": "d", "text": "XML-RPC" }
+          ],
+          "correctFeedback": "Correct! MCP uses JSON-RPC 2.0 as its wire format. Every request, response, and notification follows the JSON-RPC 2.0 message structure.",
+          "incorrectFeedback": "Not quite. MCP is built on JSON-RPC 2.0, not Protocol Buffers, GraphQL, or XML-RPC."
+        }
+      ]
+    },
+    {
+      "id": "lesson-capability-negotiation",
+      "title": "Capability Negotiation",
+      "moduleId": "mod-architecture",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Agreeing on What Is Supported"
+        },
+        {
+          "type": "paragraph",
+          "text": "When an MCP client connects to a server, the first exchange is an initialization handshake. During this handshake, both sides declare their capabilities — what they can offer and what they can consume."
+        },
+        {
+          "type": "paragraph",
+          "text": "The client sends an 'initialize' request containing its protocol version and a capabilities object. The server responds with its own protocol version, capabilities, and server information. Only after this exchange can the session proceed to normal operation."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Example Capabilities"
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Server Capabilities", "text": "tools, resources, prompts, logging" },
+            { "title": "Client Capabilities", "text": "sampling, roots" }
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "A server must not invoke features the client did not declare support for. For example, a server cannot request sampling if the client's capabilities do not include it."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-capability-1",
+          "title": "Knowledge Check",
+          "prompt": "When does capability negotiation happen in an MCP session?",
+          "options": [
+            { "id": "a", "text": "After every tool invocation" },
+            { "id": "b", "text": "During the initialization handshake before normal operations begin", "correct": true },
+            { "id": "c", "text": "Only when errors occur" },
+            { "id": "d", "text": "Capabilities are hardcoded and never negotiated" }
+          ],
+          "correctFeedback": "Correct! Capability negotiation happens during the initialization handshake — the very first exchange between client and server.",
+          "incorrectFeedback": "Not quite. Capability negotiation is a one-time event during the initialization handshake, before any normal operations begin."
+        }
+      ]
+    },
+    {
+      "id": "lesson-stdio-transport",
+      "title": "Stdio Transport",
+      "moduleId": "mod-transports",
+      "order": 1,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Standard Input/Output Transport"
+        },
+        {
+          "type": "paragraph",
+          "text": "The stdio transport is the simplest way to connect an MCP client and server. The host launches the server as a child process and communicates by writing JSON-RPC messages to the server's standard input (stdin) and reading responses from its standard output (stdout)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Characteristics"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Local only — client and server must run on the same machine",
+            "Process-based — the host spawns and manages the server process",
+            "Simple — no network configuration, ports, or TLS required",
+            "Ideal for desktop applications like Claude Desktop or IDE plugins"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Stderr is reserved for logging in the stdio transport. Servers must never write protocol messages to stderr, and clients should capture stderr for diagnostic output."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-stdio-1",
+          "title": "Knowledge Check",
+          "prompt": "What is a limitation of the stdio transport?",
+          "options": [
+            { "id": "a", "text": "It cannot send JSON messages" },
+            { "id": "b", "text": "It only works locally — client and server must be on the same machine", "correct": true },
+            { "id": "c", "text": "It requires TLS encryption" },
+            { "id": "d", "text": "It only supports one message per session" }
+          ],
+          "correctFeedback": "Correct! The stdio transport requires the server to be a child process of the host, so both must run on the same machine.",
+          "incorrectFeedback": "Not quite. The key limitation of stdio is that it is local-only — the server runs as a child process of the host on the same machine."
+        }
+      ]
+    },
+    {
+      "id": "lesson-http-transports",
+      "title": "HTTP-Based Transports",
+      "moduleId": "mod-transports",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Remote Communication via HTTP"
+        },
+        {
+          "type": "paragraph",
+          "text": "For remote MCP servers, the protocol supports HTTP-based transports. The original approach used HTTP with Server-Sent Events (SSE) for server-to-client streaming. The newer Streamable HTTP transport is now the recommended approach for most remote deployments."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Streamable HTTP Transport"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Streamable HTTP transport uses a single HTTP endpoint. Clients send JSON-RPC messages via POST requests. The server can respond with a regular JSON response or upgrade to an SSE stream for ongoing communication. This provides flexibility — simple request/response for stateless operations and streaming for long-running interactions."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Transport Comparison"
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Stdio — Local only, implicit session via process, no resumability. Best for desktop apps."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "HTTP+SSE (Legacy) — Remote, explicit sessions, no resumability. Supported for backward compatibility."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Streamable HTTP — Remote, optional session ID header, resumable with event IDs. Preferred for all new remote deployments."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-http-1",
+          "title": "Knowledge Check",
+          "prompt": "Which transport is recommended for new remote MCP deployments?",
+          "options": [
+            { "id": "a", "text": "Stdio" },
+            { "id": "b", "text": "Raw TCP sockets" },
+            { "id": "c", "text": "Streamable HTTP", "correct": true },
+            { "id": "d", "text": "WebSockets" }
+          ],
+          "correctFeedback": "Correct! Streamable HTTP is the recommended transport for remote MCP servers, supporting both request/response and streaming via SSE.",
+          "incorrectFeedback": "Not quite. For remote deployments, the MCP specification recommends the Streamable HTTP transport over stdio, raw TCP, or WebSockets."
+        }
+      ]
+    },
+    {
+      "id": "lesson-initialization",
+      "title": "Connection Initialization",
+      "moduleId": "mod-lifecycle",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Starting an MCP Session"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every MCP session follows a strict initialization sequence. The client sends an 'initialize' request, the server responds with its capabilities, and then the client sends an 'initialized' notification to confirm it is ready. Only after this three-step handshake can normal protocol operations begin."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Initialization Sequence"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Client sends 'initialize' request with protocolVersion, capabilities, and clientInfo",
+            "Server responds with protocolVersion, capabilities, and serverInfo",
+            "Client sends 'initialized' notification",
+            "Session is now active — both sides can send requests and notifications"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "The server must not send any requests to the client before receiving the 'initialized' notification. Doing so violates the protocol lifecycle."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-init-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the correct order for MCP session initialization?",
+          "options": [
+            { "id": "a", "text": "Server sends capabilities → Client acknowledges → Session starts" },
+            { "id": "b", "text": "Client sends 'initialize' → Server responds → Client sends 'initialized' → Session active", "correct": true },
+            { "id": "c", "text": "Both sides send capabilities simultaneously" },
+            { "id": "d", "text": "No initialization is needed — messages can be sent immediately" }
+          ],
+          "correctFeedback": "Correct! The client initiates with an 'initialize' request, the server responds, then the client confirms with an 'initialized' notification.",
+          "incorrectFeedback": "Not quite. The client always initiates: it sends 'initialize', receives the server's response, then sends an 'initialized' notification before normal operations begin."
+        }
+      ]
+    },
+    {
+      "id": "lesson-message-types",
+      "title": "Message Types & Patterns",
+      "moduleId": "mod-lifecycle",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Requests, Responses & Notifications"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP uses three message types from JSON-RPC 2.0. Requests expect a response, notifications are fire-and-forget, and responses carry the result or error for a previous request."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Message Type Summary"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Request — Has an ID, expects a response. Examples: tools/call, resources/read",
+            "Response — Has a matching ID, does not expect a further response. Example: result of a tools/call",
+            "Notification — No ID, fire-and-forget. Examples: notifications/cancelled, initialized"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Both clients and servers can send requests and notifications. For example, a client might request 'tools/call' from the server, while a server might request 'sampling/createMessage' from the client (if the client declared sampling support)."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-messages-1",
+          "title": "Knowledge Check",
+          "prompt": "What distinguishes an MCP notification from a request?",
+          "options": [
+            { "id": "a", "text": "Notifications include a message ID; requests do not" },
+            { "id": "b", "text": "Notifications do not have an ID and do not expect a response", "correct": true },
+            { "id": "c", "text": "Notifications can only be sent by clients" },
+            { "id": "d", "text": "There is no difference" }
+          ],
+          "correctFeedback": "Correct! Notifications are fire-and-forget messages with no ID and no expected response.",
+          "incorrectFeedback": "Not quite. The key distinction is that notifications have no ID and expect no response, while requests include an ID and expect a matching response."
+        }
+      ]
+    },
+    {
+      "id": "lesson-tools-concept",
+      "title": "Understanding Tools",
+      "moduleId": "mod-tools",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Are MCP Tools?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Tools are executable functions that an MCP server exposes. When an LLM determines it needs to perform an action — like querying a database, sending an email, or creating a file — it can invoke a tool through the MCP client. Tools represent the 'doing' capability of MCP."
+        },
+        {
+          "type": "paragraph",
+          "text": "Critically, tools are model-controlled. The AI model decides when and how to use them based on the tool definitions it receives. However, a human-in-the-loop approval mechanism should always be present for sensitive operations."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tool Characteristics"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Exposed by servers, invoked by models through clients",
+            "Defined with a name, description, and an input schema (JSON Schema)",
+            "Can have side effects — writing data, calling APIs, modifying files",
+            "Should require user approval for any dangerous or irreversible operation",
+            "Discovered via the 'tools/list' method"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Tools can have significant side effects. MCP hosts must implement appropriate consent and confirmation flows before executing tool calls."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-tools-1",
+          "title": "Knowledge Check",
+          "prompt": "Who decides when to invoke an MCP tool?",
+          "options": [
+            { "id": "a", "text": "The MCP server" },
+            { "id": "b", "text": "The user directly" },
+            { "id": "c", "text": "The AI model (with human-in-the-loop approval for sensitive actions)", "correct": true },
+            { "id": "d", "text": "Tools run automatically on a schedule" }
+          ],
+          "correctFeedback": "Correct! Tools are model-controlled — the AI model decides when and how to use them, with human approval for sensitive operations.",
+          "incorrectFeedback": "Not quite. Tools are model-controlled — the AI model decides when to invoke them based on tool definitions, though hosts should require human approval for sensitive actions."
+        }
+      ]
+    },
+    {
+      "id": "lesson-tool-definition",
+      "title": "Defining & Invoking Tools",
+      "moduleId": "mod-tools",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Tool Definition Structure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each tool is defined with three components: a unique name, a human-readable description that helps the model understand when to use it, and an inputSchema that describes the expected arguments using JSON Schema."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "The Tool Lifecycle"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Client calls 'tools/list' to discover available tools and their schemas",
+            "The host makes tool definitions available to the AI model",
+            "The model decides to call a tool and provides arguments",
+            "The client sends 'tools/call' with the tool name and arguments",
+            "The server executes the function and returns a result",
+            "The result is fed back to the model for incorporation into its response"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Tool descriptions are critical for model performance. A well-written description helps the model know when a tool is appropriate and what arguments to provide. Think of descriptions as documentation for an AI reader."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-tools-2",
+          "title": "Knowledge Check",
+          "prompt": "Which method does a client use to discover available tools on an MCP server?",
+          "options": [
+            { "id": "a", "text": "tools/call" },
+            { "id": "b", "text": "tools/list", "correct": true },
+            { "id": "c", "text": "initialize" },
+            { "id": "d", "text": "resources/read" }
+          ],
+          "correctFeedback": "Correct! The client calls 'tools/list' to get the catalog of available tools, including their names, descriptions, and input schemas.",
+          "incorrectFeedback": "Not quite. Discovery uses 'tools/list' — 'tools/call' is for invoking a tool, not discovering them."
+        }
+      ]
+    },
+    {
+      "id": "lesson-resources-concept",
+      "title": "Understanding Resources",
+      "moduleId": "mod-resources",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Are MCP Resources?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Resources are structured data that MCP servers expose for the AI application to read. Unlike tools, which perform actions, resources provide context — files, database records, API responses, or any other data the model might need to formulate better answers."
+        },
+        {
+          "type": "paragraph",
+          "text": "Resources are application-controlled. The host application decides which resources to fetch and include in the model's context, typically based on user actions or relevance heuristics."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Resource vs. Tool"
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Tool", "text": "Performs actions. May have side effects. Model-controlled. Analogous to a function call or POST/PUT/DELETE request." },
+            { "title": "Resource", "text": "Provides data and context. Read-only by convention. Application-controlled. Analogous to a GET request or file read." }
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Think of resources as similar to GET endpoints in a REST API — they expose data without modifying anything. Tools are more like POST/PUT/DELETE endpoints that take action."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-resources-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the key difference between MCP tools and resources?",
+          "options": [
+            { "id": "a", "text": "Tools provide data; resources perform actions" },
+            { "id": "b", "text": "Resources provide read-only data; tools perform actions that may have side effects", "correct": true },
+            { "id": "c", "text": "There is no practical difference" },
+            { "id": "d", "text": "Resources require authentication; tools do not" }
+          ],
+          "correctFeedback": "Correct! Resources are read-only data providers (application-controlled), while tools are executable functions that may have side effects (model-controlled).",
+          "incorrectFeedback": "Not quite. Resources provide read-only context data, while tools perform actions that can have side effects — they serve fundamentally different purposes."
+        }
+      ]
+    },
+    {
+      "id": "lesson-resource-templates",
+      "title": "Resource URIs & Templates",
+      "moduleId": "mod-resources",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Identifying Resources"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every MCP resource is identified by a URI. Servers can expose both concrete resources with fixed URIs (like 'file:///logs/app.log') and resource templates with parameterized URIs (like 'db://users/{userId}') that clients can fill in dynamically."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Discovery Methods"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "'resources/list' — returns all concrete resources the server currently exposes",
+            "'resources/templates/list' — returns parameterized URI templates",
+            "'resources/read' — reads the contents of a specific resource by URI",
+            "Servers can notify clients when their resource list changes via 'notifications/resources/list_changed'"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Resource contents can be text (UTF-8 strings) or binary (base64-encoded blobs). Each resource also includes a MIME type so the client knows how to interpret the data."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-resources-2",
+          "title": "Knowledge Check",
+          "prompt": "What is a resource template in MCP?",
+          "options": [
+            { "id": "a", "text": "A pre-rendered HTML page" },
+            { "id": "b", "text": "A parameterized URI pattern that clients fill in to request specific resources", "correct": true },
+            { "id": "c", "text": "A CSS template for styling resources" },
+            { "id": "d", "text": "A JSON Schema for validating resource data" }
+          ],
+          "correctFeedback": "Correct! Resource templates are parameterized URI patterns (like 'db://users/{userId}') that clients fill in with specific values.",
+          "incorrectFeedback": "Not quite. A resource template is a URI pattern with placeholders (like '{userId}') that clients fill in to request specific dynamic resources."
+        }
+      ]
+    },
+    {
+      "id": "lesson-prompts",
+      "title": "Prompts Primitive",
+      "moduleId": "mod-prompts-sampling-roots",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Reusable Prompt Templates"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP prompts are predefined templates that servers offer to structure interactions with the AI model. They let server authors package expert knowledge about how to best use the server's capabilities into reusable interaction patterns."
+        },
+        {
+          "type": "paragraph",
+          "text": "Prompts are user-controlled — the user (or the host application on their behalf) explicitly selects which prompts to use. This contrasts with tools (model-controlled) and resources (application-controlled)."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "How Prompts Work"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Client calls 'prompts/list' to see available prompt templates",
+            "User selects a prompt (e.g., from a slash-command menu)",
+            "Client calls 'prompts/get' with any required arguments",
+            "Server returns a structured message array ready for the model",
+            "Host inserts those messages into the conversation context"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Example",
+          "text": "A code review MCP server might expose a prompt called 'review-pull-request' that takes a PR number as an argument. When invoked, it fetches the diff and returns a structured prompt that guides the model to analyze code quality, security, and test coverage."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-prompts-1",
+          "title": "Knowledge Check",
+          "prompt": "Who controls when MCP prompts are used?",
+          "options": [
+            { "id": "a", "text": "The AI model decides automatically" },
+            { "id": "b", "text": "The MCP server forces prompts into the conversation" },
+            { "id": "c", "text": "The user explicitly selects prompts", "correct": true },
+            { "id": "d", "text": "Prompts activate at random intervals" }
+          ],
+          "correctFeedback": "Correct! Prompts are user-controlled. The user explicitly selects which prompts to use, typically through a UI element like a slash-command menu.",
+          "incorrectFeedback": "Not quite. Unlike tools (model-controlled) and resources (application-controlled), prompts are user-controlled — the user explicitly chooses when to use them."
+        }
+      ]
+    },
+    {
+      "id": "lesson-sampling-roots",
+      "title": "Sampling & Roots",
+      "moduleId": "mod-prompts-sampling-roots",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Server-Initiated LLM Requests"
+        },
+        {
+          "type": "paragraph",
+          "text": "Sampling is a powerful MCP capability that inverts the typical flow. Instead of the client asking the server for data, the server asks the client to perform an LLM completion. This enables agentic workflows where the server can request AI reasoning without needing its own model access."
+        },
+        {
+          "type": "paragraph",
+          "text": "The server sends a 'sampling/createMessage' request to the client, which routes it to the host's LLM. Critically, the human remains in the loop — hosts should present sampling requests to users for approval before executing them."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Roots"
+        },
+        {
+          "type": "paragraph",
+          "text": "Roots are URIs that clients declare to inform the server about relevant filesystem boundaries or project scopes. For example, a client might declare roots for the current workspace directory or a specific git repository. Servers use roots as hints to limit their operations to appropriate scopes."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Roots are informational, not enforced. A server receiving roots should respect them, but the protocol does not prevent a server from accessing paths outside declared roots. Security enforcement happens at the host and OS levels."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-sampling-1",
+          "title": "Knowledge Check",
+          "prompt": "What does MCP sampling allow?",
+          "options": [
+            { "id": "a", "text": "Clients to sample random data from servers" },
+            { "id": "b", "text": "Servers to request LLM completions through the client", "correct": true },
+            { "id": "c", "text": "Statistical analysis of protocol messages" },
+            { "id": "d", "text": "Rate limiting of tool invocations" }
+          ],
+          "correctFeedback": "Correct! Sampling allows MCP servers to request LLM completions through the client, enabling agentic workflows without the server needing its own model access.",
+          "incorrectFeedback": "Not quite. Sampling is about servers requesting AI completions through the client — it inverts the typical flow so servers can leverage the host's LLM."
+        }
+      ]
+    },
+    {
+      "id": "lesson-dev-prerequisites",
+      "title": "Development Prerequisites",
+      "moduleId": "mod-server-setup",
+      "order": 1,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Before You Build"
+        },
+        {
+          "type": "paragraph",
+          "text": "Building an MCP server requires a basic development environment and familiarity with either TypeScript/Node.js or Python. The official SDKs handle the protocol plumbing, letting you focus on the capabilities your server will expose."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Required Knowledge"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Comfortable reading and writing TypeScript or Python",
+            "Basic understanding of JSON and JSON Schema",
+            "Familiarity with async/await patterns",
+            "Understanding of the MCP concepts from earlier tracks (tools, resources, prompts)"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Required Software"
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "TypeScript", "text": "Node.js 18+, npm or yarn, TypeScript 5+" },
+            { "title": "Python", "text": "Python 3.10+, pip or uv package manager" }
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "For testing your MCP server, the MCP Inspector tool is invaluable. It provides a web-based UI that acts as an MCP client, letting you call tools, read resources, and test prompts interactively."
+        }
+      ]
+    },
+    {
+      "id": "lesson-sdk-installation",
+      "title": "SDK Installation & Project Setup",
+      "moduleId": "mod-server-setup",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Installing the Official SDKs"
+        },
+        {
+          "type": "paragraph",
+          "text": "The MCP project provides official SDKs for TypeScript and Python. These SDKs handle JSON-RPC framing, transport management, and capability negotiation so you can focus on implementing your server's unique functionality."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "TypeScript SDK"
+        },
+        {
+          "type": "paragraph",
+          "text": "Install the TypeScript SDK via npm: 'npm install @modelcontextprotocol/sdk'. The package provides the McpServer class, transport implementations, and TypeScript types for all protocol messages."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Python SDK"
+        },
+        {
+          "type": "paragraph",
+          "text": "Install the Python SDK via pip: 'pip install mcp' or with uv: 'uv add mcp'. The package provides the FastMCP class for rapid server development, along with lower-level primitives for advanced use cases."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "The Python SDK's FastMCP class uses a decorator-based approach that makes defining tools and resources extremely concise — often just a function with a decorator."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-sdk-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the purpose of the MCP SDKs?",
+          "options": [
+            { "id": "a", "text": "They replace the need for a programming language" },
+            { "id": "b", "text": "They handle protocol plumbing (JSON-RPC, transports, capability negotiation) so you can focus on server logic", "correct": true },
+            { "id": "c", "text": "They provide a database for storing MCP messages" },
+            { "id": "d", "text": "They are only needed for debugging" }
+          ],
+          "correctFeedback": "Correct! The SDKs handle low-level protocol details — JSON-RPC framing, transport management, capability negotiation — so you can focus on your server's unique functionality.",
+          "incorrectFeedback": "Not quite. The SDKs abstract away protocol complexity (JSON-RPC, transports, negotiation) so developers can focus on implementing tools, resources, and prompts."
+        }
+      ]
+    },
+    {
+      "id": "lesson-ts-scaffold",
+      "title": "Scaffolding a TypeScript Server",
+      "moduleId": "mod-typescript-server",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Creating the Server Skeleton"
+        },
+        {
+          "type": "paragraph",
+          "text": "A TypeScript MCP server starts by importing the McpServer class from the SDK and creating an instance. You then register capabilities (tools, resources, prompts) on the server instance and finally connect it to a transport."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Minimal Server Structure"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Import McpServer and StdioServerTransport from '@modelcontextprotocol/sdk/server'",
+            "Create a new McpServer instance with a name and version",
+            "Register tools using server.tool(name, schema, handler)",
+            "Register resources using server.resource(name, uri, handler)",
+            "Connect the server to a StdioServerTransport and call server.connect(transport)"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "The TypeScript SDK's server.tool() method takes named parameters including a description and a Zod schema for input validation. Zod schemas are automatically converted to JSON Schema for the protocol."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-ts-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the final step in setting up a TypeScript MCP server?",
+          "options": [
+            { "id": "a", "text": "Defining the tool schemas" },
+            { "id": "b", "text": "Importing the SDK" },
+            { "id": "c", "text": "Connecting the server instance to a transport", "correct": true },
+            { "id": "d", "text": "Writing unit tests" }
+          ],
+          "correctFeedback": "Correct! After creating the server and registering capabilities, you connect it to a transport (like StdioServerTransport) to begin accepting connections.",
+          "incorrectFeedback": "Not quite. The final step is connecting the server instance to a transport — without this, the server cannot communicate with clients."
+        }
+      ]
+    },
+    {
+      "id": "lesson-ts-tools-resources",
+      "title": "Adding Tools & Resources in TypeScript",
+      "moduleId": "mod-typescript-server",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Implementing Capabilities"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once your server skeleton is in place, you register tools and resources. Each tool needs a name, a description, an input schema (using Zod for TypeScript), and an async handler function. Resources need a name, a URI pattern, and a read handler."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tool Registration Pattern"
+        },
+        {
+          "type": "paragraph",
+          "text": "Call server.tool() with a name string, a description, a Zod object schema defining input parameters, and an async callback. The callback receives the validated arguments and returns a result object with a 'content' array containing text or image blocks."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Resource Registration Pattern"
+        },
+        {
+          "type": "paragraph",
+          "text": "Call server.resource() with a name, a URI or URI template string, and an async read handler. The handler receives the URI and returns a 'contents' array with text or blob data and a MIME type."
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Tool handlers should always validate inputs even if a schema is provided. The schema catches structural issues, but business logic validation (like checking if a file exists) must happen in your handler."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-ts-2",
+          "title": "Knowledge Check",
+          "prompt": "What format does a TypeScript MCP tool handler return?",
+          "options": [
+            { "id": "a", "text": "A raw string" },
+            { "id": "b", "text": "A result object with a 'content' array of typed blocks (text, image, etc.)", "correct": true },
+            { "id": "c", "text": "An HTML document" },
+            { "id": "d", "text": "A binary buffer" }
+          ],
+          "correctFeedback": "Correct! Tool handlers return a result object containing a 'content' array with typed content blocks — typically text blocks, but also image blocks for visual data.",
+          "incorrectFeedback": "Not quite. TypeScript tool handlers return a structured result object with a 'content' array of typed blocks, not raw strings or HTML."
+        }
+      ]
+    },
+    {
+      "id": "lesson-py-scaffold",
+      "title": "Scaffolding a Python Server",
+      "moduleId": "mod-python-server",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Python Server with FastMCP"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Python SDK offers FastMCP, a high-level interface that uses decorators to register tools and resources with minimal boilerplate. Creating a server is as simple as instantiating FastMCP with a name and decorating your functions."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Minimal Server Structure"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Import FastMCP from 'mcp.server.fastmcp'",
+            "Create an instance: mcp = FastMCP('my-server')",
+            "Decorate functions with @mcp.tool() to register tools",
+            "Decorate functions with @mcp.resource('uri://pattern') to register resources",
+            "Run the server with: mcp.run()"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "FastMCP automatically generates JSON Schema from your Python function signatures, including type hints and docstrings. Your function docstring becomes the tool description that the model sees."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-py-1",
+          "title": "Knowledge Check",
+          "prompt": "How does FastMCP generate tool descriptions?",
+          "options": [
+            { "id": "a", "text": "From a separate YAML configuration file" },
+            { "id": "b", "text": "From the function's docstring and type hints", "correct": true },
+            { "id": "c", "text": "Descriptions must be typed manually in a JSON file" },
+            { "id": "d", "text": "It uses AI to generate descriptions automatically" }
+          ],
+          "correctFeedback": "Correct! FastMCP generates tool descriptions from Python docstrings and infers input schemas from type hints — well-documented code produces well-defined tools.",
+          "incorrectFeedback": "Not quite. FastMCP automatically uses the function's docstring as the tool description and derives the input schema from Python type hints."
+        }
+      ]
+    },
+    {
+      "id": "lesson-py-tools-resources",
+      "title": "Adding Tools & Resources in Python",
+      "moduleId": "mod-python-server",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Implementing Capabilities in Python"
+        },
+        {
+          "type": "paragraph",
+          "text": "With FastMCP, adding tools is as simple as writing a normal Python function and decorating it with @mcp.tool(). The function parameters become the tool's input schema, and the return value becomes the tool's response content."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Tool Example Pattern"
+        },
+        {
+          "type": "paragraph",
+          "text": "Define a function decorated with @mcp.tool(). Use Python type hints for parameters. The decorator inspects the function signature and docstring to build the tool's JSON Schema and description automatically. Returning a string produces a text content block."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Resource Example Pattern"
+        },
+        {
+          "type": "paragraph",
+          "text": "Define a function decorated with @mcp.resource() and pass the resource URI as an argument. For dynamic resources, use URI templates with curly-brace placeholders that map to function parameters. The function returns the resource content as a string."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "For complex input validation in Python, you can use Pydantic models as function parameters. FastMCP will convert them to JSON Schema automatically."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-py-2",
+          "title": "Knowledge Check",
+          "prompt": "What happens when a Python FastMCP tool function returns a string?",
+          "options": [
+            { "id": "a", "text": "An error is raised" },
+            { "id": "b", "text": "The string is automatically wrapped in a text content block", "correct": true },
+            { "id": "c", "text": "The string is stored in a database" },
+            { "id": "d", "text": "The server shuts down" }
+          ],
+          "correctFeedback": "Correct! FastMCP automatically wraps returned strings into text content blocks for the protocol response.",
+          "incorrectFeedback": "Not quite. When a FastMCP tool returns a string, the SDK automatically wraps it in a text content block — no error or special handling needed."
+        }
+      ]
+    },
+    {
+      "id": "lesson-attack-surfaces",
+      "title": "MCP Attack Surfaces",
+      "moduleId": "mod-threat-model",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Where Things Can Go Wrong"
+        },
+        {
+          "type": "paragraph",
+          "text": "Connecting AI models to external systems via MCP introduces real security risks. Understanding the attack surfaces is the first step toward building secure deployments."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Key Attack Surfaces"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Tool poisoning — a malicious server provides tool descriptions that manipulate the model into unintended behavior",
+            "Excessive permissions — a server is granted more access than it needs, widening the blast radius if compromised",
+            "Data exfiltration — a compromised server could extract sensitive information from the conversation context",
+            "Indirect prompt injection — external data fetched by an MCP server contains adversarial instructions",
+            "Rug-pull attacks — a server behaves safely during testing but changes behavior later",
+            "Server impersonation — a malicious server pretends to be a trusted one"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Remember: MCP servers can see tool results from other servers if the host shares cross-server context. This means one malicious server could potentially access data returned by another server in the same session."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-security-1",
+          "title": "Knowledge Check",
+          "prompt": "What is a tool poisoning attack in MCP?",
+          "options": [
+            { "id": "a", "text": "A tool that runs very slowly" },
+            { "id": "b", "text": "A malicious server providing tool descriptions designed to manipulate model behavior", "correct": true },
+            { "id": "c", "text": "Using too many tools at once" },
+            { "id": "d", "text": "A tool that returns incorrect data types" }
+          ],
+          "correctFeedback": "Correct! Tool poisoning occurs when a malicious server crafts tool descriptions to manipulate the AI model into unintended actions or data leakage.",
+          "incorrectFeedback": "Not quite. Tool poisoning specifically refers to malicious tool descriptions designed to manipulate model behavior, not performance or data type issues."
+        }
+      ]
+    },
+    {
+      "id": "lesson-trust-boundaries",
+      "title": "Trust Boundaries & Least Privilege",
+      "moduleId": "mod-threat-model",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Establishing Trust"
+        },
+        {
+          "type": "paragraph",
+          "text": "In the MCP model, the host is the trust anchor. It decides which servers to connect, what permissions each server receives, and whether tool invocations require user approval. Every element beyond the host should be treated with appropriate skepticism."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Trust Hierarchy"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "User — ultimate authority, grants consent for actions",
+            "Host — enforces security policies, mediates all interactions",
+            "Client — protocol handler, trusts the host's decisions",
+            "Server — untrusted by default, must prove its value through declared capabilities",
+            "External services — accessed by servers, fully untrusted from the host's perspective"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Principle of Least Privilege"
+        },
+        {
+          "type": "paragraph",
+          "text": "Each MCP server should receive only the minimum permissions needed for its function. A server that reads log files should not have write access. A server that queries a database should use a read-only connection. The host should restrict what each server can do, even if the server requests broader access."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-trust-1",
+          "title": "Knowledge Check",
+          "prompt": "Who is the trust anchor in the MCP architecture?",
+          "options": [
+            { "id": "a", "text": "The MCP server" },
+            { "id": "b", "text": "The LLM model" },
+            { "id": "c", "text": "The host application", "correct": true },
+            { "id": "d", "text": "The transport layer" }
+          ],
+          "correctFeedback": "Correct! The host is the trust anchor — it controls which servers connect, enforces policies, and mediates all interactions.",
+          "incorrectFeedback": "Not quite. The host application is the trust anchor — it decides which servers to connect and enforces all security policies."
+        }
+      ]
+    },
+    {
+      "id": "lesson-human-in-the-loop",
+      "title": "Human-in-the-Loop Controls",
+      "moduleId": "mod-production-hardening",
+      "order": 1,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Keeping Humans in Control"
+        },
+        {
+          "type": "paragraph",
+          "text": "MCP is designed with the principle that humans should remain in the decision loop for consequential actions. Hosts are responsible for implementing consent and confirmation mechanisms so that users can approve, deny, or modify tool invocations before they execute."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Human Oversight Patterns"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Tool approval prompts — show the user what tool is being called and with what arguments before execution",
+            "Sampling consent — require user approval before allowing a server to trigger LLM completions",
+            "Resource access notifications — inform users when sensitive data is being read into context",
+            "Audit logging — maintain a complete record of all tool calls, arguments, and results",
+            "Rate limiting — prevent runaway tool invocations from consuming excessive resources"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Never build 'auto-approve all' modes into production MCP hosts. Even in development, auto-approval should be limited to explicitly safe, read-only operations."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-hitl-1",
+          "title": "Knowledge Check",
+          "prompt": "Why should MCP hosts implement tool approval prompts?",
+          "options": [
+            { "id": "a", "text": "To slow down the AI model" },
+            { "id": "b", "text": "Because the protocol requires a 3-second delay" },
+            { "id": "c", "text": "To ensure users can review and approve consequential actions before they execute", "correct": true },
+            { "id": "d", "text": "Tool approval prompts are optional and serve no security purpose" }
+          ],
+          "correctFeedback": "Correct! Tool approval prompts keep humans in control — users can review tool calls and arguments before any side effects occur.",
+          "incorrectFeedback": "Not quite. Tool approval prompts exist so users can review and approve or deny consequential actions before they execute — it's a core security principle."
+        }
+      ]
+    },
+    {
+      "id": "lesson-deployment-checklist",
+      "title": "Production Deployment Checklist",
+      "moduleId": "mod-production-hardening",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Going to Production"
+        },
+        {
+          "type": "paragraph",
+          "text": "Deploying MCP servers in production requires attention to authentication, authorization, monitoring, and operational resilience. This checklist covers the essential considerations."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Security Checklist"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Authenticate all remote connections — use OAuth 2.0 or another robust auth mechanism for HTTP transports",
+            "Enforce TLS for all remote MCP connections — never send protocol messages in plaintext",
+            "Apply the principle of least privilege — servers should only have access to what they need",
+            "Validate and sanitize all tool inputs — do not trust model-generated arguments blindly",
+            "Implement rate limiting — prevent abuse through excessive tool calls",
+            "Log all tool invocations and results — maintain an audit trail",
+            "Monitor for anomalous behavior — alert on unusual tool call patterns or data volumes",
+            "Pin server versions — prevent supply chain attacks through rug-pull version changes",
+            "Review tool descriptions — ensure no hidden instructions that could manipulate model behavior",
+            "Test failure modes — verify graceful degradation when servers are unreachable"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "For remote Streamable HTTP servers, the MCP specification aligns with OAuth 2.1 for authorization. Implementing a well-known OAuth discovery endpoint makes your server compatible with standard auth flows."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-deploy-1",
+          "title": "Knowledge Check",
+          "prompt": "Which practice helps prevent rug-pull attacks on MCP servers?",
+          "options": [
+            { "id": "a", "text": "Always using the latest version of every server" },
+            { "id": "b", "text": "Pinning server versions and reviewing updates before adopting them", "correct": true },
+            { "id": "c", "text": "Running servers without authentication" },
+            { "id": "d", "text": "Disabling logging to reduce overhead" }
+          ],
+          "correctFeedback": "Correct! Pinning versions prevents malicious updates from being silently adopted after trust has been established.",
+          "incorrectFeedback": "Not quite. Rug-pull attacks exploit automatic updates — pinning server versions and reviewing changes before adoption is the defense."
+        }
+      ]
+    }
+  ],
+
+  "glossary": [
+    { "term": "MCP", "definition": "Model Context Protocol — an open standard that defines how AI applications communicate with external data sources and tools." },
+    { "term": "Host", "definition": "The user-facing AI application (e.g., Claude Desktop, Cursor) that manages MCP clients and enforces security policies." },
+    { "term": "Client", "definition": "A protocol handler within the host that maintains a 1:1 connection with a single MCP server." },
+    { "term": "Server", "definition": "A lightweight program that exposes tools, resources, and/or prompts to connected MCP clients." },
+    { "term": "Tool", "definition": "An executable function exposed by an MCP server that the AI model can invoke. Model-controlled and may have side effects." },
+    { "term": "Resource", "definition": "Structured, read-only data exposed by an MCP server for the AI application to incorporate into context. Application-controlled." },
+    { "term": "Prompt", "definition": "A reusable interaction template exposed by an MCP server that structures how users interact with the model. User-controlled." },
+    { "term": "Sampling", "definition": "An MCP capability that allows servers to request LLM completions through the client, enabling agentic server-side workflows." },
+    { "term": "Roots", "definition": "URIs declared by clients to inform servers about relevant filesystem boundaries or project scopes." },
+    { "term": "JSON-RPC 2.0", "definition": "The wire format used by MCP for all messages. Defines requests (with IDs), responses (matching IDs), and notifications (no ID)." },
+    { "term": "Transport", "definition": "The communication layer between client and server. MCP supports stdio, HTTP+SSE (legacy), and Streamable HTTP transports." },
+    { "term": "Stdio Transport", "definition": "A local transport where the host spawns the server as a child process and communicates via standard input/output." },
+    { "term": "Streamable HTTP", "definition": "The recommended remote transport that uses a single HTTP endpoint with optional SSE streaming for server-to-client messages." },
+    { "term": "Capability Negotiation", "definition": "The initialization handshake where client and server declare what protocol features they support." },
+    { "term": "Initialize", "definition": "The first request sent by a client to begin an MCP session, containing protocol version and client capabilities." },
+    { "term": "Initialized", "definition": "A notification sent by the client after receiving the server's initialize response, signaling that normal operations can begin." },
+    { "term": "tools/list", "definition": "The MCP method a client calls to discover all tools exposed by a server, including their names, descriptions, and input schemas." },
+    { "term": "tools/call", "definition": "The MCP method a client calls to invoke a specific tool on the server with provided arguments." },
+    { "term": "resources/list", "definition": "The MCP method a client calls to discover all concrete resources a server currently exposes." },
+    { "term": "resources/read", "definition": "The MCP method a client calls to read the contents of a specific resource by its URI." },
+    { "term": "prompts/list", "definition": "The MCP method a client calls to discover available prompt templates on a server." },
+    { "term": "prompts/get", "definition": "The MCP method a client calls to retrieve a specific prompt, optionally with arguments, returning structured messages." },
+    { "term": "FastMCP", "definition": "A high-level Python class in the official MCP SDK that uses decorators for rapid server development with minimal boilerplate." },
+    { "term": "McpServer", "definition": "The core TypeScript class in the official MCP SDK for building MCP servers." },
+    { "term": "Tool Poisoning", "definition": "A security attack where a malicious server crafts tool descriptions to manipulate AI model behavior." },
+    { "term": "Rug-Pull Attack", "definition": "A supply chain attack where an MCP server behaves safely initially but pushes malicious updates after trust is established." },
+    { "term": "Human-in-the-Loop", "definition": "A design principle requiring user approval for consequential AI actions, especially tool invocations with side effects." },
+    { "term": "Least Privilege", "definition": "The security principle that each MCP server should receive only the minimum permissions necessary for its function." },
+    { "term": "URI Template", "definition": "A parameterized URI pattern (e.g., 'db://users/{userId}') used for dynamic MCP resource addressing." },
+    { "term": "MCP Inspector", "definition": "A development tool that provides a web-based MCP client UI for interactively testing servers." }
+  ],
+
+  "references": [
+    { "title": "MCP Specification", "url": "https://spec.modelcontextprotocol.io" },
+    { "title": "MCP Official Documentation", "url": "https://modelcontextprotocol.io" },
+    { "title": "TypeScript SDK Repository", "url": "https://github.com/modelcontextprotocol/typescript-sdk" },
+    { "title": "Python SDK Repository", "url": "https://github.com/modelcontextprotocol/python-sdk" },
+    { "title": "MCP Servers Directory", "url": "https://github.com/modelcontextprotocol/servers" }
+  ]
+}

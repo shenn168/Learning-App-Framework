@@ -1,0 +1,9 @@
+{
+  "curricula": [
+    {
+      "id": "mcp-v1",
+      "title": "Model Context Protocol (MCP)",
+      "file": "mcp-v1.json"
+    }
+  ]
+}
