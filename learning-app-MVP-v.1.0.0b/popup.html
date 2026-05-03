@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnFlow</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="popup-logo">
+        <span class="popup-logo-icon" aria-hidden="true">📘</span>
+        <h1 class="popup-title">LearnFlow</h1>
+      </div>
+      <p class="popup-tagline">Your learning, your pace.</p>
+    </header>
+
+    <main class="popup-body">
+      <div id="resume-card" class="popup-card resume-card" hidden>
+        <p class="resume-label">Continue where you left off</p>
+        <p id="resume-title" class="resume-title"></p>
+        <button id="btn-resume" class="popup-btn primary" aria-label="Resume learning">
+          Resume
+        </button>
+      </div>
+
+      <nav class="popup-nav" aria-label="Quick actions">
+        <button id="btn-home" class="popup-btn secondary" aria-label="Open LearnFlow home">
+          🏠 Home
+        </button>
+        <button id="btn-glossary" class="popup-btn secondary" aria-label="Open glossary">
+          📖 Glossary
+        </button>
+        <button id="btn-progress" class="popup-btn secondary" aria-label="View progress">
+          📊 Progress
+        </button>
+      </nav>
+    </main>
+
+    <footer class="popup-footer">
+      <p>v1.0.0 · Local-first learning</p>
+    </footer>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

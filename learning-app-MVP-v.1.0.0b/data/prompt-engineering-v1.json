@@ -1,0 +1,1752 @@
+{
+  "id": "prompt-engineering-v1",
+  "title": "Prompt Engineering for LLMs",
+  "version": "1.0.0",
+  "language": "en",
+  "description": "A comprehensive curriculum teaching how to write effective prompts for large language models — from foundational principles through advanced techniques, real-world applications, and evaluation strategies for adult learners.",
+  "level": "mixed",
+  "estimatedMinutes": 195,
+  "author": "Enterprise AI",
+
+  "tracks": [
+    {
+      "id": "track-foundations",
+      "title": "Prompt Foundations",
+      "description": "Understand what prompts are, how LLMs process them, and the core principles that make prompts effective.",
+      "level": "beginner",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-what-is-prompting", "mod-how-llms-read", "mod-anatomy"]
+    },
+    {
+      "id": "track-core-techniques",
+      "title": "Core Prompting Techniques",
+      "description": "Master the essential prompting strategies: zero-shot, few-shot, chain-of-thought, role-based, and structured output formatting.",
+      "level": "intermediate",
+      "estimatedMinutes": 45,
+      "moduleIds": ["mod-zero-few-shot", "mod-chain-of-thought", "mod-role-and-persona"]
+    },
+    {
+      "id": "track-advanced",
+      "title": "Advanced Prompt Strategies",
+      "description": "Explore advanced patterns including multi-step decomposition, self-reflection, constraints engineering, and prompt chaining.",
+      "level": "advanced",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-decomposition", "mod-self-reflection", "mod-constraints"]
+    },
+    {
+      "id": "track-applications",
+      "title": "Real-World Applications",
+      "description": "Apply prompting techniques to practical domains: writing and editing, code generation, data analysis, and business workflows.",
+      "level": "intermediate",
+      "estimatedMinutes": 40,
+      "moduleIds": ["mod-writing-editing", "mod-code-generation", "mod-data-analysis"]
+    },
+    {
+      "id": "track-evaluation",
+      "title": "Evaluation, Iteration & Safety",
+      "description": "Learn to systematically evaluate prompt quality, iterate on underperforming prompts, and apply safety guardrails.",
+      "level": "advanced",
+      "estimatedMinutes": 30,
+      "moduleIds": ["mod-evaluation", "mod-safety-guardrails"]
+    }
+  ],
+
+  "modules": [
+    {
+      "id": "mod-what-is-prompting",
+      "title": "What Is Prompt Engineering?",
+      "description": "An introduction to prompt engineering and why it matters for getting useful outputs from LLMs.",
+      "trackId": "track-foundations",
+      "order": 1,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-prompting-defined", "lesson-why-prompts-matter"]
+    },
+    {
+      "id": "mod-how-llms-read",
+      "title": "How LLMs Process Prompts",
+      "description": "Build intuition for how language models interpret text, including tokenization, context windows, and attention.",
+      "trackId": "track-foundations",
+      "order": 2,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-tokens-context", "lesson-attention-recency"]
+    },
+    {
+      "id": "mod-anatomy",
+      "title": "Anatomy of an Effective Prompt",
+      "description": "Break down the structural components that consistently produce high-quality LLM responses.",
+      "trackId": "track-foundations",
+      "order": 3,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-prompt-components", "lesson-clarity-specificity"]
+    },
+    {
+      "id": "mod-zero-few-shot",
+      "title": "Zero-Shot & Few-Shot Prompting",
+      "description": "Learn when and how to use examples in prompts to guide model behavior.",
+      "trackId": "track-core-techniques",
+      "order": 1,
+      "estimatedMinutes": 15,
+      "lessonIds": ["lesson-zero-shot", "lesson-few-shot"]
+    },
+    {
+      "id": "mod-chain-of-thought",
+      "title": "Chain-of-Thought Prompting",
+      "description": "Guide the model to reason step by step for improved accuracy on complex tasks.",
+      "trackId": "track-core-techniques",
+      "order": 2,
+      "estimatedMinutes": 15,
+      "lessonIds": ["lesson-cot-basics", "lesson-cot-variations"]
+    },
+    {
+      "id": "mod-role-and-persona",
+      "title": "Role & Persona Prompting",
+      "description": "Use system messages and role assignments to shape the model's tone, expertise, and behavior.",
+      "trackId": "track-core-techniques",
+      "order": 3,
+      "estimatedMinutes": 15,
+      "lessonIds": ["lesson-system-messages", "lesson-persona-crafting"]
+    },
+    {
+      "id": "mod-decomposition",
+      "title": "Task Decomposition & Prompt Chaining",
+      "description": "Break complex tasks into manageable sub-prompts and chain outputs together.",
+      "trackId": "track-advanced",
+      "order": 1,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-breaking-tasks", "lesson-chaining-outputs"]
+    },
+    {
+      "id": "mod-self-reflection",
+      "title": "Self-Critique & Reflection Patterns",
+      "description": "Teach the model to verify, critique, and improve its own outputs.",
+      "trackId": "track-advanced",
+      "order": 2,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-self-check", "lesson-iterative-refinement"]
+    },
+    {
+      "id": "mod-constraints",
+      "title": "Constraints & Output Engineering",
+      "description": "Control output format, length, tone, and structure through precise constraint specification.",
+      "trackId": "track-advanced",
+      "order": 3,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-format-constraints", "lesson-negative-instructions"]
+    },
+    {
+      "id": "mod-writing-editing",
+      "title": "Writing & Editing with LLMs",
+      "description": "Apply prompting techniques to content creation, rewriting, summarization, and editorial workflows.",
+      "trackId": "track-applications",
+      "order": 1,
+      "estimatedMinutes": 14,
+      "lessonIds": ["lesson-content-creation", "lesson-editing-summarization"]
+    },
+    {
+      "id": "mod-code-generation",
+      "title": "Code Generation & Debugging",
+      "description": "Prompt LLMs effectively for writing code, explaining code, and debugging errors.",
+      "trackId": "track-applications",
+      "order": 2,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-code-prompts", "lesson-debugging-prompts"]
+    },
+    {
+      "id": "mod-data-analysis",
+      "title": "Data Analysis & Business Workflows",
+      "description": "Use prompts to extract insights from data, generate reports, and automate business reasoning.",
+      "trackId": "track-applications",
+      "order": 3,
+      "estimatedMinutes": 13,
+      "lessonIds": ["lesson-data-extraction", "lesson-business-automation"]
+    },
+    {
+      "id": "mod-evaluation",
+      "title": "Evaluating & Iterating on Prompts",
+      "description": "Develop a systematic framework for measuring prompt effectiveness and iterating toward better results.",
+      "trackId": "track-evaluation",
+      "order": 1,
+      "estimatedMinutes": 15,
+      "lessonIds": ["lesson-eval-criteria", "lesson-iteration-workflow"]
+    },
+    {
+      "id": "mod-safety-guardrails",
+      "title": "Safety, Ethics & Guardrails",
+      "description": "Understand responsible prompting practices, bias mitigation, and techniques to prevent harmful outputs.",
+      "trackId": "track-evaluation",
+      "order": 2,
+      "estimatedMinutes": 15,
+      "lessonIds": ["lesson-bias-mitigation", "lesson-guardrail-patterns"]
+    }
+  ],
+
+  "lessons": [
+    {
+      "id": "lesson-prompting-defined",
+      "title": "Defining Prompt Engineering",
+      "moduleId": "mod-what-is-prompting",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Prompt Engineering?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prompt engineering is the practice of designing and refining the text inputs (prompts) you give to a large language model (LLM) in order to get useful, accurate, and relevant outputs. It sits at the intersection of communication, logic, and understanding how AI models process language."
+        },
+        {
+          "type": "paragraph",
+          "text": "Unlike traditional programming where you write explicit instructions in code, prompt engineering uses natural language to guide a model's behavior. The quality of the output is directly linked to the quality of the prompt — vague inputs produce vague outputs, while precise, well-structured prompts produce focused, reliable results."
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Prompt engineering is not about tricking the model. It is about communicating clearly so the model can leverage its training to produce the best possible response for your specific need."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Key Principles"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Clarity — state exactly what you need, removing ambiguity",
+            "Context — provide relevant background so the model can reason appropriately",
+            "Constraints — define the boundaries of the expected output (format, length, tone)",
+            "Iteration — treat prompting as an iterative process, not a one-shot activity"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-prompting-defined-1",
+          "title": "Knowledge Check",
+          "prompt": "What best describes prompt engineering?",
+          "options": [
+            { "id": "a", "text": "Writing code in Python to control an LLM" },
+            { "id": "b", "text": "Designing and refining natural language inputs to guide an LLM toward useful outputs", "correct": true },
+            { "id": "c", "text": "Training a new language model from scratch" },
+            { "id": "d", "text": "Memorizing a library of pre-written prompts" }
+          ],
+          "correctFeedback": "Correct! Prompt engineering is the practice of crafting and refining natural language inputs to guide LLM behavior toward useful, accurate outputs.",
+          "incorrectFeedback": "Not quite. Prompt engineering is about designing natural language inputs — not coding, model training, or memorization."
+        }
+      ]
+    },
+    {
+      "id": "lesson-why-prompts-matter",
+      "title": "Why Prompts Matter",
+      "moduleId": "mod-what-is-prompting",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Prompt Is the Interface"
+        },
+        {
+          "type": "paragraph",
+          "text": "For most users, the prompt is the only interface to an LLM. There are no buttons to click, no menus to navigate — just a text input. This means the prompt carries the entire burden of communicating intent, context, format expectations, and constraints."
+        },
+        {
+          "type": "paragraph",
+          "text": "Small changes in wording can produce dramatically different outputs. Adding a single sentence of context, specifying a desired format, or including an example can transform a generic response into a highly useful one."
+        },
+        {
+          "type": "scenario",
+          "label": "Quick Comparison",
+          "text": "Weak prompt: 'Tell me about cars.' — This produces a generic, unfocused essay. Strong prompt: 'Compare the fuel efficiency and maintenance costs of hybrid vs. fully electric vehicles for a family of four in a suburban setting. Present the comparison in a table.' — This produces targeted, structured, actionable information."
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Think of prompting like giving instructions to a very capable new employee — they can do almost anything, but they need clear, specific directions on what you actually want."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-why-prompts-1",
+          "title": "Knowledge Check",
+          "prompt": "Why do small changes in a prompt often produce dramatically different outputs?",
+          "options": [
+            { "id": "a", "text": "LLMs are random and unreliable" },
+            { "id": "b", "text": "The prompt is the sole interface communicating intent, context, and constraints to the model", "correct": true },
+            { "id": "c", "text": "The model ignores most of the prompt anyway" },
+            { "id": "d", "text": "Small changes trigger different models to respond" }
+          ],
+          "correctFeedback": "Correct! Since the prompt is the only way to communicate with the model, every word matters — small changes in wording can shift the model's interpretation significantly.",
+          "incorrectFeedback": "Not quite. LLMs are sensitive to prompt wording because the prompt is the entire interface — the model uses every word to determine what to generate."
+        }
+      ]
+    },
+    {
+      "id": "lesson-tokens-context",
+      "title": "Tokens & Context Windows",
+      "moduleId": "mod-how-llms-read",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How LLMs See Your Prompt"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs do not read text the way humans do. Before processing your prompt, the model breaks it into tokens — small pieces that might be words, parts of words, or punctuation. Understanding tokenization helps you write more efficient prompts and manage context window limits."
+        },
+        {
+          "type": "paragraph",
+          "text": "A context window is the total number of tokens the model can handle in a single interaction, including both your prompt (input) and the model's response (output). If your prompt plus the response exceeds the context window, the model cannot process it."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Key Token Facts"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "One token is roughly 3–4 characters in English, or about 0.75 words",
+            "Context windows vary by model: 4K, 8K, 32K, 128K, 200K, or even 1M tokens",
+            "Both input (prompt) and output (response) consume tokens from the same window",
+            "Longer prompts leave less room for the model's response",
+            "Efficient prompts convey maximum information with minimum tokens"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Just because a model has a large context window does not mean you should fill it. Models tend to perform best when given focused, relevant context rather than massive dumps of loosely related text."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-tokens-1",
+          "title": "Knowledge Check",
+          "prompt": "What is a context window in the context of LLMs?",
+          "options": [
+            { "id": "a", "text": "The graphical user interface where you type prompts" },
+            { "id": "b", "text": "The total number of tokens the model can process in a single interaction (input + output)", "correct": true },
+            { "id": "c", "text": "The number of conversations the model remembers" },
+            { "id": "d", "text": "The time limit for generating a response" }
+          ],
+          "correctFeedback": "Correct! The context window is the total token budget for a single interaction — your prompt and the model's response must fit within it.",
+          "incorrectFeedback": "Not quite. The context window is the token limit for one interaction — it includes both input tokens (your prompt) and output tokens (the model's response)."
+        }
+      ]
+    },
+    {
+      "id": "lesson-attention-recency",
+      "title": "Attention & Position Effects",
+      "moduleId": "mod-how-llms-read",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Where You Put Information Matters"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs process text through an attention mechanism that determines how much weight each token gives to every other token. In practice, this means the position of information within your prompt affects how strongly the model attends to it."
+        },
+        {
+          "type": "paragraph",
+          "text": "Research has shown that models tend to attend more strongly to information at the beginning and end of prompts — a phenomenon sometimes called the 'lost in the middle' effect. Critical instructions or context placed in the middle of a very long prompt may receive less attention."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Practical Positioning Guidelines"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Place your most important instructions at the top of the prompt",
+            "Restate key constraints or format requirements near the end",
+            "For long documents, put your question or task before and after the document, not only before",
+            "Use clear section headers and delimiters to help the model navigate long prompts",
+            "When providing examples, place them close to the instruction they illustrate"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "A useful pattern is: instruction first → context/data in the middle → restate instruction at the end. This leverages both the primacy and recency effects."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-attention-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the 'lost in the middle' effect?",
+          "options": [
+            { "id": "a", "text": "The model forgets the beginning of the prompt" },
+            { "id": "b", "text": "Information placed in the middle of a long prompt may receive less attention than information at the beginning or end", "correct": true },
+            { "id": "c", "text": "The model skips processing the middle tokens entirely" },
+            { "id": "d", "text": "Only the first sentence of a prompt is processed" }
+          ],
+          "correctFeedback": "Correct! The 'lost in the middle' effect means models tend to attend more strongly to the beginning and end of long prompts, potentially under-weighting middle content.",
+          "incorrectFeedback": "Not quite. The 'lost in the middle' effect refers to reduced attention on content in the middle of long prompts — the beginning and end typically get stronger attention."
+        }
+      ]
+    },
+    {
+      "id": "lesson-prompt-components",
+      "title": "Components of an Effective Prompt",
+      "moduleId": "mod-anatomy",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Building Blocks"
+        },
+        {
+          "type": "paragraph",
+          "text": "While not every prompt needs all components, effective prompts typically include some combination of: a task instruction, context or background, input data, output format specification, and constraints or guardrails."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Five Core Components"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Task instruction — what you want the model to do (summarize, analyze, generate, compare, etc.)",
+            "Context — background information or role assignment that frames the task",
+            "Input data — the specific content the model should work with (text to summarize, code to review, etc.)",
+            "Output format — how the result should be structured (table, bullet list, JSON, paragraph, etc.)",
+            "Constraints — boundaries on the output (word count, tone, topics to avoid, etc.)"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Example Prompt Using All Five Components",
+          "text": "Task: Summarize the following customer feedback. Context: You are a product analyst preparing a weekly digest for the engineering team. Input: [customer feedback text]. Format: A bullet list of the top 3 themes with one supporting quote each. Constraints: Keep the summary under 150 words and use neutral, professional tone."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-components-1",
+          "title": "Knowledge Check",
+          "prompt": "Which of the following is NOT one of the five core prompt components?",
+          "options": [
+            { "id": "a", "text": "Task instruction" },
+            { "id": "b", "text": "Output format specification" },
+            { "id": "c", "text": "The model's training data", "correct": true },
+            { "id": "d", "text": "Constraints and guardrails" }
+          ],
+          "correctFeedback": "Correct! The model's training data is not a prompt component you control. The five components are: task instruction, context, input data, output format, and constraints.",
+          "incorrectFeedback": "Not quite. You cannot control the model's training data — it is not a prompt component. The five components are: task instruction, context, input data, output format, and constraints."
+        }
+      ]
+    },
+    {
+      "id": "lesson-clarity-specificity",
+      "title": "Clarity & Specificity",
+      "moduleId": "mod-anatomy",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Be Precise, Not Verbose"
+        },
+        {
+          "type": "paragraph",
+          "text": "The most common prompt failure is ambiguity. When your prompt could be interpreted multiple ways, the model picks one interpretation — and it may not be the one you intended. Clarity and specificity are the antidotes."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Clarity Techniques"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Use concrete nouns instead of vague references ('the quarterly sales report' vs. 'that document')",
+            "Specify quantities ('list 5 items' vs. 'list some items')",
+            "Name the output format explicitly ('respond in a numbered list' vs. 'organize your response')",
+            "Define terms that could be ambiguous ('by short, I mean under 50 words')",
+            "Use delimiters to separate sections (triple backticks, XML tags, dashes)"
+          ]
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Vague Prompt", "text": "Write something about our product for the website." },
+            { "title": "Specific Prompt", "text": "Write a 100-word product description for our website homepage. The product is a noise-canceling headset for remote workers. Tone: professional but friendly. Include one customer benefit and a call-to-action." }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-clarity-1",
+          "title": "Knowledge Check",
+          "prompt": "Why should you use delimiters (like triple backticks or XML tags) in prompts?",
+          "options": [
+            { "id": "a", "text": "They make the prompt look more professional" },
+            { "id": "b", "text": "They clearly separate sections so the model can distinguish instructions from input data", "correct": true },
+            { "id": "c", "text": "They reduce the token count" },
+            { "id": "d", "text": "They are required by all LLMs" }
+          ],
+          "correctFeedback": "Correct! Delimiters help the model clearly distinguish between different parts of your prompt — instructions, input data, examples, and constraints.",
+          "incorrectFeedback": "Not quite. Delimiters serve a structural purpose — they help the model identify where instructions end and input data begins, reducing misinterpretation."
+        }
+      ]
+    },
+    {
+      "id": "lesson-zero-shot",
+      "title": "Zero-Shot Prompting",
+      "moduleId": "mod-zero-few-shot",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prompting Without Examples"
+        },
+        {
+          "type": "paragraph",
+          "text": "Zero-shot prompting means giving the model a task instruction without providing any examples of the expected output. You rely entirely on the model's pre-trained knowledge and your instruction clarity to get the desired result."
+        },
+        {
+          "type": "paragraph",
+          "text": "Zero-shot works well for straightforward tasks that the model has encountered frequently during training: translation, summarization, sentiment analysis, simple Q&A, and common format conversions."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "When Zero-Shot Works"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "The task is well-known (summarize, translate, classify sentiment)",
+            "The expected output format is standard (paragraph, list, yes/no)",
+            "You need a quick result and the task does not require a custom structure",
+            "The model has strong general knowledge about the domain"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "When Zero-Shot Struggles"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "The output requires a very specific or unusual format",
+            "The task requires domain-specific reasoning the model may not naturally default to",
+            "Consistency across multiple outputs matters (e.g., generating 10 items in the exact same structure)"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-zero-shot-1",
+          "title": "Knowledge Check",
+          "prompt": "What defines a zero-shot prompt?",
+          "options": [
+            { "id": "a", "text": "A prompt that includes at least one example" },
+            { "id": "b", "text": "A task instruction given without any examples of the expected output", "correct": true },
+            { "id": "c", "text": "A prompt that produces zero results" },
+            { "id": "d", "text": "A prompt sent to an untrained model" }
+          ],
+          "correctFeedback": "Correct! Zero-shot prompting provides only the task instruction — no examples — relying on the model's training to produce the expected output.",
+          "incorrectFeedback": "Not quite. Zero-shot means no examples are provided — the model relies entirely on the instruction and its training to determine the appropriate output."
+        }
+      ]
+    },
+    {
+      "id": "lesson-few-shot",
+      "title": "Few-Shot Prompting",
+      "moduleId": "mod-zero-few-shot",
+      "order": 2,
+      "estimatedMinutes": 8,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Teaching by Example"
+        },
+        {
+          "type": "paragraph",
+          "text": "Few-shot prompting includes one or more examples of the desired input-output pattern before presenting the actual task. These examples act as implicit instructions, showing the model exactly what format, style, and reasoning you expect."
+        },
+        {
+          "type": "paragraph",
+          "text": "Few-shot is particularly powerful when you need consistent formatting, domain-specific classification, or any task where showing is easier than telling."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Best Practices for Few-Shot Examples"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Use 2–5 examples — more is not always better and consumes context window tokens",
+            "Ensure examples are representative of the actual task variety",
+            "Keep example format consistent — the model will mimic the pattern exactly",
+            "Include edge cases if you want the model to handle them correctly",
+            "Label examples clearly (e.g., 'Input:' and 'Output:') to establish the pattern"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Few-Shot Pattern",
+          "text": "Classify the sentiment of each review as Positive, Negative, or Neutral. Review: 'The battery life is incredible and it charges in under an hour.' Sentiment: Positive Review: 'Returned it after two days. Screen flickered constantly.' Sentiment: Negative Review: 'It arrived on time and works as described.' Sentiment: Neutral Review: 'Best purchase I have made this year — absolutely love it.' Sentiment:"
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-few-shot-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the primary purpose of examples in a few-shot prompt?",
+          "options": [
+            { "id": "a", "text": "To increase the token count" },
+            { "id": "b", "text": "To implicitly teach the model the expected input-output pattern, format, and reasoning", "correct": true },
+            { "id": "c", "text": "To test if the model is working correctly" },
+            { "id": "d", "text": "To replace the task instruction entirely" }
+          ],
+          "correctFeedback": "Correct! Few-shot examples implicitly demonstrate the pattern you want — the model observes the input-output pairs and applies the same logic to the new input.",
+          "incorrectFeedback": "Not quite. Examples in few-shot prompting serve as implicit instructions — they show the model the expected pattern so it can apply the same logic to new inputs."
+        }
+      ]
+    },
+    {
+      "id": "lesson-cot-basics",
+      "title": "Chain-of-Thought Fundamentals",
+      "moduleId": "mod-chain-of-thought",
+      "order": 1,
+      "estimatedMinutes": 8,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Thinking Step by Step"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chain-of-thought (CoT) prompting asks the model to show its reasoning process before arriving at a final answer. Instead of jumping directly to a conclusion, the model generates intermediate steps — much like showing your work in a math problem."
+        },
+        {
+          "type": "paragraph",
+          "text": "CoT dramatically improves performance on tasks requiring multi-step reasoning: math problems, logical deductions, planning, code debugging, and complex analysis. The explicit reasoning steps help the model avoid errors that occur when it tries to arrive at an answer in a single leap."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "How to Trigger CoT"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Simple trigger: append 'Let's think step by step.' to your prompt",
+            "Structured trigger: 'Walk through your reasoning before giving the final answer.'",
+            "Format-specific: 'First analyze the problem, then list your reasoning steps, then provide the answer.'",
+            "Few-shot CoT: provide examples that include the reasoning steps, not just the answers"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "Research from Google and others has shown that chain-of-thought prompting can improve accuracy on reasoning benchmarks by 20–40% compared to standard prompting on the same model."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-cot-1",
+          "title": "Knowledge Check",
+          "prompt": "Why does chain-of-thought prompting improve reasoning accuracy?",
+          "options": [
+            { "id": "a", "text": "It uses a different, smarter model" },
+            { "id": "b", "text": "Generating intermediate reasoning steps helps the model avoid errors that occur when jumping directly to conclusions", "correct": true },
+            { "id": "c", "text": "It reduces the number of tokens processed" },
+            { "id": "d", "text": "It only works for math problems" }
+          ],
+          "correctFeedback": "Correct! By generating intermediate reasoning steps, the model can catch logical errors and build toward the correct answer incrementally.",
+          "incorrectFeedback": "Not quite. CoT works because step-by-step reasoning reduces errors — the model checks each step rather than guessing the final answer directly."
+        }
+      ]
+    },
+    {
+      "id": "lesson-cot-variations",
+      "title": "CoT Variations & Advanced Reasoning",
+      "moduleId": "mod-chain-of-thought",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Beyond Basic CoT"
+        },
+        {
+          "type": "paragraph",
+          "text": "Several variations of chain-of-thought prompting have emerged for different use cases. Understanding these variations helps you choose the right approach for each task."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "CoT Variations"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Zero-shot CoT — simply adding 'think step by step' without examples",
+            "Few-shot CoT — providing examples that include reasoning steps",
+            "Self-consistency — generating multiple CoT paths and selecting the most common answer",
+            "Tree-of-thought — exploring multiple reasoning branches and evaluating which leads to the best outcome",
+            "Structured CoT — forcing specific reasoning formats like 'Assumption → Evidence → Conclusion'"
+          ]
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Standard CoT", "text": "Single reasoning path, one answer. Fast but can follow a flawed chain. Best for straightforward multi-step problems." },
+            { "title": "Self-Consistency CoT", "text": "Multiple reasoning paths, majority-vote answer. Slower but more robust. Best for problems where reasoning paths can diverge." }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-cot-2",
+          "title": "Knowledge Check",
+          "prompt": "What is the self-consistency variation of CoT?",
+          "options": [
+            { "id": "a", "text": "Asking the model to repeat its answer three times" },
+            { "id": "b", "text": "Generating multiple reasoning paths and selecting the most common final answer", "correct": true },
+            { "id": "c", "text": "Using the same prompt for every task" },
+            { "id": "d", "text": "Checking the model's answer against a database" }
+          ],
+          "correctFeedback": "Correct! Self-consistency generates multiple independent reasoning chains and selects the answer that appears most frequently — a form of ensemble reasoning.",
+          "incorrectFeedback": "Not quite. Self-consistency involves generating multiple independent reasoning paths and picking the majority answer, not simply repeating the same response."
+        }
+      ]
+    },
+    {
+      "id": "lesson-system-messages",
+      "title": "System Messages & Role Assignment",
+      "moduleId": "mod-role-and-persona",
+      "order": 1,
+      "estimatedMinutes": 8,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Setting the Stage with System Messages"
+        },
+        {
+          "type": "paragraph",
+          "text": "Many LLM APIs support a 'system message' — a special instruction that sets the model's overall behavior, persona, and constraints for the entire conversation. The system message is processed before any user messages and acts as persistent context."
+        },
+        {
+          "type": "paragraph",
+          "text": "Even in interfaces without an explicit system message field, you can achieve the same effect by placing role and behavior instructions at the very beginning of your prompt. The model treats early instructions as foundational framing."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Effective System Message Components"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Identity — who the model is (e.g., 'You are a senior data analyst')",
+            "Expertise — what the model knows (e.g., 'with deep expertise in SQL and Python')",
+            "Audience — who the model is talking to (e.g., 'explaining concepts to business stakeholders')",
+            "Tone — how the model should communicate (e.g., 'concise, professional, no jargon')",
+            "Constraints — what the model should avoid (e.g., 'do not make up data; say you do not know if unsure')"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "A strong system message can reduce repetition in your user prompts. Instead of saying 'respond in JSON' every time, set it once in the system message."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-system-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the primary purpose of a system message?",
+          "options": [
+            { "id": "a", "text": "To display error messages to the user" },
+            { "id": "b", "text": "To set the model's overall behavior, persona, and constraints for the conversation", "correct": true },
+            { "id": "c", "text": "To limit the model's context window" },
+            { "id": "d", "text": "To log conversation history" }
+          ],
+          "correctFeedback": "Correct! The system message establishes the model's identity, expertise, tone, and behavioral constraints as persistent framing for the entire conversation.",
+          "incorrectFeedback": "Not quite. The system message is a special instruction that defines the model's behavior and persona, not an error display or logging mechanism."
+        }
+      ]
+    },
+    {
+      "id": "lesson-persona-crafting",
+      "title": "Crafting Effective Personas",
+      "moduleId": "mod-role-and-persona",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "The Power of Persona"
+        },
+        {
+          "type": "paragraph",
+          "text": "Assigning a specific persona to the model is one of the most impactful prompting techniques. When you tell the model 'You are a senior security engineer reviewing code for vulnerabilities,' it shifts its attention, vocabulary, and reasoning patterns to align with that role."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Persona Design Guidelines"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Be specific about expertise level ('senior,' '10 years experience,' 'PhD-level')",
+            "Name the domain ('cybersecurity,' 'pediatric medicine,' 'contract law')",
+            "Define the audience relationship ('explaining to a non-technical manager')",
+            "Include behavioral traits ('skeptical and thorough' vs. 'encouraging and supportive')",
+            "Avoid contradictory traits ('brief and exhaustive' is confusing)"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Persona in Action",
+          "text": "Without persona: 'Review this code.' → Generic, surface-level review. With persona: 'You are a staff software engineer at a company that handles financial transactions. You specialize in code reviews focused on security vulnerabilities, race conditions, and data integrity. Review this code with that lens and flag any concerns with severity ratings.' → Focused, expert-level security review."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-persona-1",
+          "title": "Knowledge Check",
+          "prompt": "Why does assigning a persona improve LLM output quality?",
+          "options": [
+            { "id": "a", "text": "It loads a different model version" },
+            { "id": "b", "text": "It shifts the model's attention, vocabulary, and reasoning to align with the specified expertise and role", "correct": true },
+            { "id": "c", "text": "Personas are decorative and do not affect output" },
+            { "id": "d", "text": "It bypasses the model's safety filters" }
+          ],
+          "correctFeedback": "Correct! A well-defined persona causes the model to draw on relevant knowledge, adopt appropriate vocabulary, and apply domain-specific reasoning patterns.",
+          "incorrectFeedback": "Not quite. Personas genuinely affect outputs — they prime the model to activate domain-relevant knowledge and adopt the tone and depth of the specified role."
+        }
+      ]
+    },
+    {
+      "id": "lesson-breaking-tasks",
+      "title": "Breaking Complex Tasks Apart",
+      "moduleId": "mod-decomposition",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Decomposition Strategy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Complex tasks that involve multiple steps, different types of reasoning, or large amounts of data often overwhelm a single prompt. Task decomposition breaks the work into smaller, manageable sub-tasks — each handled by a focused prompt."
+        },
+        {
+          "type": "paragraph",
+          "text": "This approach mirrors how humans tackle complex work: divide the project into phases, complete each phase, then integrate the results. LLMs perform better on focused, well-defined sub-tasks than on monolithic mega-prompts."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "When to Decompose"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "The task requires different types of thinking (research → analysis → writing)",
+            "A single prompt produces inconsistent or incomplete results",
+            "The input data is too large for one context window",
+            "You need to validate intermediate steps before proceeding",
+            "Different sub-tasks benefit from different personas or instructions"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "A common decomposition pattern: Step 1 — extract key facts. Step 2 — analyze relationships between facts. Step 3 — generate conclusions. Step 4 — format the final output. Each step gets its own prompt."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-decomp-1",
+          "title": "Knowledge Check",
+          "prompt": "When should you decompose a task into multiple prompts?",
+          "options": [
+            { "id": "a", "text": "Always, even for simple tasks" },
+            { "id": "b", "text": "When the task involves multiple types of reasoning, large data, or a single prompt produces inconsistent results", "correct": true },
+            { "id": "c", "text": "Only when the model returns errors" },
+            { "id": "d", "text": "Never — one prompt is always better" }
+          ],
+          "correctFeedback": "Correct! Decomposition is valuable when tasks are complex, involve different reasoning types, or when a single prompt cannot produce reliable results.",
+          "incorrectFeedback": "Not quite. Decomposition is a strategy for complex tasks — simple tasks work fine with a single prompt, but multi-faceted tasks benefit from being broken apart."
+        }
+      ]
+    },
+    {
+      "id": "lesson-chaining-outputs",
+      "title": "Prompt Chaining",
+      "moduleId": "mod-decomposition",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Connecting Sub-Task Outputs"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prompt chaining takes the output from one prompt and feeds it as input to the next. This creates a pipeline where each stage refines, transforms, or builds upon the previous result. The final output benefits from focused attention at every stage."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Chaining Patterns"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Sequential — each prompt's output feeds directly into the next (A → B → C)",
+            "Fan-out / Fan-in — one prompt generates multiple sub-tasks, separate prompts handle each, a final prompt synthesizes results",
+            "Conditional — the output of one prompt determines which prompt runs next",
+            "Validation gate — a checking prompt sits between stages and only passes verified content forward"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Example Chain",
+          "text": "Prompt 1: 'Extract all technical requirements from this product specification document.' → Prompt 2: 'For each requirement, assess feasibility and estimate implementation effort.' → Prompt 3: 'Generate a prioritized project plan based on these assessments, optimizing for highest business value with lowest effort first.'"
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-chaining-1",
+          "title": "Knowledge Check",
+          "prompt": "What is a validation gate in prompt chaining?",
+          "options": [
+            { "id": "a", "text": "A password-protected prompt" },
+            { "id": "b", "text": "A checking prompt between stages that verifies intermediate output before passing it to the next stage", "correct": true },
+            { "id": "c", "text": "A prompt that validates the user's identity" },
+            { "id": "d", "text": "The final prompt in a chain" }
+          ],
+          "correctFeedback": "Correct! A validation gate is a quality-checking prompt inserted between stages to verify that intermediate results are correct before the chain continues.",
+          "incorrectFeedback": "Not quite. A validation gate is a prompt that checks intermediate output for quality or correctness before allowing the chain to proceed to the next stage."
+        }
+      ]
+    },
+    {
+      "id": "lesson-self-check",
+      "title": "Self-Critique Prompting",
+      "moduleId": "mod-self-reflection",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Asking the Model to Check Its Work"
+        },
+        {
+          "type": "paragraph",
+          "text": "Self-critique prompting is a two-phase approach: first, generate a response; then, ask the model to critically evaluate that response for errors, gaps, or weaknesses. The model often catches mistakes in its own output when explicitly asked to review it."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Self-Critique Patterns"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Generate-then-critique: 'Now review your answer. Are there any logical errors, missing considerations, or unsupported claims?'",
+            "Adversarial review: 'Argue against your own answer. What would a skeptic say?'",
+            "Checklist verification: 'Verify your answer against these criteria: accuracy, completeness, clarity, and relevance.'",
+            "Confidence scoring: 'Rate your confidence in each claim on a scale of 1–5 and explain why.'"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Self-critique is not foolproof. The model can generate confident but incorrect self-assessments. Use self-critique as one quality layer, not the only one — human review remains essential for high-stakes outputs."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-selfcheck-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the two-phase pattern in self-critique prompting?",
+          "options": [
+            { "id": "a", "text": "Ask two different models the same question" },
+            { "id": "b", "text": "First generate a response, then ask the model to critically evaluate that response for errors", "correct": true },
+            { "id": "c", "text": "Write the prompt twice for emphasis" },
+            { "id": "d", "text": "Use two system messages simultaneously" }
+          ],
+          "correctFeedback": "Correct! Self-critique first generates a response, then explicitly asks the model to review its own output for errors, gaps, or weaknesses.",
+          "incorrectFeedback": "Not quite. Self-critique is a two-phase approach: Phase 1 generates the answer, Phase 2 asks the model to critically review its own answer."
+        }
+      ]
+    },
+    {
+      "id": "lesson-iterative-refinement",
+      "title": "Iterative Refinement",
+      "moduleId": "mod-self-reflection",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Refining Through Conversation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Iterative refinement treats the model interaction as a conversation, not a single shot. You generate an initial output, identify what needs improvement, and provide targeted follow-up instructions. Each iteration builds on the previous version."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Refinement Strategies"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Start broad, then narrow: get the overall structure right first, then refine details",
+            "Give specific feedback: 'The second paragraph is too technical — simplify it for a non-technical audience' is better than 'make it better'",
+            "Request targeted changes: 'Keep everything except the introduction — rewrite that to open with a statistic'",
+            "Use progressive disclosure: 'Now add examples to each of the three main points'",
+            "Combine with self-critique: ask the model what it would improve, then instruct it to implement those improvements"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Most professional prompt engineers rarely get the perfect output on the first attempt. Treating prompting as an iterative process — like editing a document through multiple drafts — is normal and expected."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-refine-1",
+          "title": "Knowledge Check",
+          "prompt": "Which is a more effective refinement instruction?",
+          "options": [
+            { "id": "a", "text": "'Make it better'" },
+            { "id": "b", "text": "'The second paragraph is too technical — rewrite it at a high school reading level while keeping the key data points'", "correct": true },
+            { "id": "c", "text": "'Try again'" },
+            { "id": "d", "text": "'I don't like it'" }
+          ],
+          "correctFeedback": "Correct! Specific feedback pointing to what needs to change, how, and what to preserve produces much better refinements than vague instructions like 'make it better.'",
+          "incorrectFeedback": "Not quite. Effective refinement requires specific, actionable feedback — identify what to change, how to change it, and what to keep."
+        }
+      ]
+    },
+    {
+      "id": "lesson-format-constraints",
+      "title": "Format & Structure Constraints",
+      "moduleId": "mod-constraints",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Controlling the Output Shape"
+        },
+        {
+          "type": "paragraph",
+          "text": "One of the most practical prompting skills is controlling the format and structure of the model's output. Whether you need JSON, markdown tables, bullet lists, or a specific template, explicit format instructions dramatically improve output usability."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Format Specification Techniques"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Name the format: 'Respond in valid JSON with keys: name, category, score'",
+            "Provide a template: 'Use this format: Title: [title] | Summary: [1-2 sentences] | Rating: [1-5]'",
+            "Use few-shot formatting: provide an example output in the exact format you want",
+            "Specify structural elements: 'Use H2 headings for each section, bullet points for sub-items, and a summary table at the end'",
+            "Set length constraints: 'Each bullet point should be exactly one sentence, 15–25 words'"
+          ]
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Format-Free Output", "text": "The model chooses structure. Results vary between runs. Hard to parse programmatically. May include unwanted preamble." },
+            { "title": "Format-Constrained Output", "text": "Structure is predictable. Consistent across runs. Easy to parse and integrate. Clean output without extra commentary." }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-format-1",
+          "title": "Knowledge Check",
+          "prompt": "Why is specifying output format important for programmatic use?",
+          "options": [
+            { "id": "a", "text": "It makes the response look prettier" },
+            { "id": "b", "text": "It ensures consistent, predictable structure that downstream code can reliably parse", "correct": true },
+            { "id": "c", "text": "It reduces the model's processing time" },
+            { "id": "d", "text": "Format constraints are only cosmetic" }
+          ],
+          "correctFeedback": "Correct! When outputs feed into code or workflows, consistent format is essential — format constraints ensure the output is parseable and predictable.",
+          "incorrectFeedback": "Not quite. Format constraints are critical for programmatic use — they ensure outputs have a consistent, predictable structure that code can parse reliably."
+        }
+      ]
+    },
+    {
+      "id": "lesson-negative-instructions",
+      "title": "Negative Instructions & Boundaries",
+      "moduleId": "mod-constraints",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Telling the Model What NOT to Do"
+        },
+        {
+          "type": "paragraph",
+          "text": "Negative instructions — telling the model what to avoid — can be as important as positive instructions. They prevent common failure modes like unnecessary disclaimers, off-topic tangents, fabricated data, or unwanted formatting."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Effective Negative Instructions"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "'Do not include disclaimers or caveats unless specifically asked'",
+            "'Do not invent statistics — if you are not confident in a number, say so'",
+            "'Do not add a preamble or introduction — start directly with the first item'",
+            "'Do not use jargon — all terms should be understandable by a general audience'",
+            "'Do not repeat the question back to me in your response'"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Balance positive and negative instructions. A prompt that is entirely negative ('don't do this, don't do that') gives the model little guidance about what it SHOULD do. Lead with positive instructions and add negative ones to address specific known failure modes."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-negative-1",
+          "title": "Knowledge Check",
+          "prompt": "What is the recommended balance between positive and negative instructions?",
+          "options": [
+            { "id": "a", "text": "Use only negative instructions for maximum control" },
+            { "id": "b", "text": "Lead with positive instructions about what to do, then add negative instructions to prevent known failure modes", "correct": true },
+            { "id": "c", "text": "Avoid negative instructions entirely" },
+            { "id": "d", "text": "Alternate between positive and negative in every sentence" }
+          ],
+          "correctFeedback": "Correct! Lead with clear positive instructions so the model knows what to do, then add targeted negative instructions to prevent specific known issues.",
+          "incorrectFeedback": "Not quite. The best approach is positive-first: tell the model what you want, then add negative constraints to block known failure modes."
+        }
+      ]
+    },
+    {
+      "id": "lesson-content-creation",
+      "title": "Content Creation with LLMs",
+      "moduleId": "mod-writing-editing",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Writing with AI Assistance"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs excel at content creation when given clear specifications about audience, purpose, tone, and structure. The key is providing enough context for the model to write as if it deeply understands the situation, while maintaining enough constraints to keep the output focused and on-brand."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Content Creation Prompt Framework"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Define the content type (blog post, email, social media post, report, documentation)",
+            "Specify the audience (technical developers, executive leadership, general public)",
+            "Set the tone (formal, conversational, persuasive, educational)",
+            "Provide key points or data to include",
+            "State length requirements and structural expectations",
+            "Include brand voice guidelines or examples if available"
+          ]
+        },
+        {
+          "type": "scenario",
+          "label": "Strong Content Prompt",
+          "text": "Write a 300-word blog post for our developer documentation site. Topic: Getting started with our REST API. Audience: developers who have used REST APIs before but are new to our platform. Tone: helpful and concise, no marketing fluff. Structure: a 1-sentence intro, 3 numbered steps, and a 1-sentence closing with a link placeholder. Include a code snippet in step 2 showing a sample GET request."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-content-1",
+          "title": "Knowledge Check",
+          "prompt": "What should a content creation prompt always specify?",
+          "options": [
+            { "id": "a", "text": "The model's internal parameters" },
+            { "id": "b", "text": "Audience, purpose, tone, structure, and length requirements", "correct": true },
+            { "id": "c", "text": "Only the topic — the model should decide everything else" },
+            { "id": "d", "text": "The exact sentences to use" }
+          ],
+          "correctFeedback": "Correct! Effective content prompts specify audience, purpose, tone, structure, and length — giving the model clear boundaries while allowing creative expression.",
+          "incorrectFeedback": "Not quite. Content creation prompts should specify audience, purpose, tone, structure, and length — leaving just the topic is too vague for professional-quality output."
+        }
+      ]
+    },
+    {
+      "id": "lesson-editing-summarization",
+      "title": "Editing & Summarization",
+      "moduleId": "mod-writing-editing",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Refining Existing Text"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs are powerful editors. They can rewrite for clarity, adjust tone, simplify complex language, fix grammar, and condense content. Summarization — distilling long text into shorter versions — is one of the tasks LLMs handle most reliably."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Editing Prompt Strategies"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Specify the editing goal: 'simplify for a non-technical audience' vs. 'tighten prose without changing meaning'",
+            "Preserve constraints: 'Keep all technical accuracy — only change the readability'",
+            "Use comparative instructions: 'Rewrite this at an 8th-grade reading level'",
+            "Request tracked changes: 'Show what you changed and why in a separate section'"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Summarization Techniques"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Set the target length: 'Summarize in 3 sentences' or 'Summarize in under 100 words'",
+            "Define the focus: 'Summarize focusing on financial implications only'",
+            "Choose the format: 'Executive summary in bullet points' vs. 'narrative paragraph'",
+            "Specify the audience: 'Summarize for a technical team' vs. 'for the board of directors'"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-editing-1",
+          "title": "Knowledge Check",
+          "prompt": "When asking an LLM to edit text, what should you always specify?",
+          "options": [
+            { "id": "a", "text": "The model's temperature setting" },
+            { "id": "b", "text": "The editing goal and what should be preserved", "correct": true },
+            { "id": "c", "text": "Nothing — the model knows best" },
+            { "id": "d", "text": "The original author's name" }
+          ],
+          "correctFeedback": "Correct! Always specify what the edit should achieve (e.g., simplify, shorten, formalize) and what should be preserved (e.g., technical accuracy, key data).",
+          "incorrectFeedback": "Not quite. Effective editing prompts specify both the goal (what to change) and the constraints (what to keep) — otherwise the model may over-edit."
+        }
+      ]
+    },
+    {
+      "id": "lesson-code-prompts",
+      "title": "Effective Code Generation Prompts",
+      "moduleId": "mod-code-generation",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prompting for Code"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs can generate code in virtually any programming language. The quality of generated code depends heavily on how well your prompt specifies the requirements, constraints, and expected behavior."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Code Prompt Best Practices"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Specify the programming language and version explicitly",
+            "Describe the function's purpose, inputs, and expected outputs",
+            "State constraints: error handling requirements, performance considerations, dependencies",
+            "Provide sample input/output pairs when the logic is complex",
+            "Request inline comments or documentation if needed",
+            "Ask for tests alongside the implementation when appropriate"
+          ]
+        },
+        {
+          "type": "comparison",
+          "columns": [
+            { "title": "Weak Code Prompt", "text": "'Write a sort function.'" },
+            { "title": "Strong Code Prompt", "text": "'Write a Python 3.11 function that sorts a list of dictionaries by a specified key. Parameters: data (list of dicts), sort_key (string), reverse (bool, default False). Return the sorted list. Raise ValueError if sort_key is not present in any dict. Include type hints and a docstring.'" }
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-code-1",
+          "title": "Knowledge Check",
+          "prompt": "What should a code generation prompt specify beyond the basic task?",
+          "options": [
+            { "id": "a", "text": "Only the programming language" },
+            { "id": "b", "text": "Language, inputs, outputs, error handling, constraints, and documentation requirements", "correct": true },
+            { "id": "c", "text": "The prompt should be as short as possible" },
+            { "id": "d", "text": "Only the function name" }
+          ],
+          "correctFeedback": "Correct! Comprehensive code prompts specify language, parameters, return values, error handling, constraints, and documentation expectations.",
+          "incorrectFeedback": "Not quite. Effective code prompts go beyond the language — they specify inputs, outputs, error handling, constraints, and documentation needs."
+        }
+      ]
+    },
+    {
+      "id": "lesson-debugging-prompts",
+      "title": "Debugging & Code Explanation",
+      "moduleId": "mod-code-generation",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Using LLMs for Debugging"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs can help identify bugs, explain error messages, and suggest fixes. For debugging, the key is providing sufficient context: the code, the error message, the expected behavior, and the actual behavior."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Debugging Prompt Template"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Share the relevant code (use delimiters to separate it from instructions)",
+            "Include the exact error message or unexpected output",
+            "Describe what you expected to happen",
+            "Describe what actually happened",
+            "Mention any recent changes or relevant environment details",
+            "Ask for an explanation of the root cause, not just a fix"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "Always ask for the 'why' behind a bug, not just the fix. Understanding the root cause prevents the same class of bug from recurring and deepens your knowledge."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-debug-1",
+          "title": "Knowledge Check",
+          "prompt": "When asking an LLM to help debug code, what context should you provide?",
+          "options": [
+            { "id": "a", "text": "Just the error message" },
+            { "id": "b", "text": "The code, error message, expected behavior, and actual behavior", "correct": true },
+            { "id": "c", "text": "Only the line number where the error occurs" },
+            { "id": "d", "text": "No context — the model will figure it out" }
+          ],
+          "correctFeedback": "Correct! Effective debugging prompts include the code, the error message, expected behavior, and actual behavior — giving the model full context to diagnose the issue.",
+          "incorrectFeedback": "Not quite. The model needs the code, error details, expected outcome, and actual outcome to diagnose problems effectively."
+        }
+      ]
+    },
+    {
+      "id": "lesson-data-extraction",
+      "title": "Data Extraction & Analysis",
+      "moduleId": "mod-data-analysis",
+      "order": 1,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Extracting Insights from Data"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs can extract structured information from unstructured text, identify patterns, perform calculations, and summarize data findings. The key is providing clear extraction criteria and output format specifications."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Data Analysis Prompt Strategies"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Define exactly what data points to extract ('extract company name, revenue, year, and growth percentage')",
+            "Specify the output format ('return as a JSON array of objects')",
+            "Request analysis alongside extraction ('identify the top 3 trends and support each with data from the text')",
+            "Handle missing data explicitly ('if a data point is not present, use null instead of guessing')",
+            "Ask for confidence flags ('mark any extracted values you are less than 90% confident about')"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "LLMs can hallucinate numbers. Always ask the model to only use data explicitly present in the provided text and to flag any values it is uncertain about. Verify numerical outputs independently for critical decisions."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-data-1",
+          "title": "Knowledge Check",
+          "prompt": "How should a data extraction prompt handle missing data?",
+          "options": [
+            { "id": "a", "text": "Let the model guess reasonable values" },
+            { "id": "b", "text": "Explicitly instruct the model to use null or a placeholder and never fabricate missing values", "correct": true },
+            { "id": "c", "text": "Ignore missing data — it does not matter" },
+            { "id": "d", "text": "Ask the model to search the internet for the missing data" }
+          ],
+          "correctFeedback": "Correct! Always explicitly instruct the model to use null or a placeholder for missing data — never let it fabricate values, especially for numbers.",
+          "incorrectFeedback": "Not quite. You should explicitly instruct the model to use null or flag missing data rather than guess — LLMs can confidently hallucinate numbers."
+        }
+      ]
+    },
+    {
+      "id": "lesson-business-automation",
+      "title": "Business Workflow Automation",
+      "moduleId": "mod-data-analysis",
+      "order": 2,
+      "estimatedMinutes": 6,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Automating Business Reasoning"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs can automate repetitive business reasoning tasks: classifying support tickets, generating status reports from raw data, drafting email responses, evaluating proposals against criteria, and routing requests to appropriate teams."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Automation Prompt Patterns"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Classification: 'Categorize this support ticket into one of these categories: [list]. Output only the category name.'",
+            "Report generation: 'Given this raw data, generate a weekly status report following this template: [template].'",
+            "Decision support: 'Evaluate this vendor proposal against these 5 criteria: [criteria]. Score each 1–5 and provide a final recommendation.'",
+            "Routing: 'Based on this request, determine which team should handle it: Engineering, Sales, Support, or Legal. Output the team name and a one-sentence justification.'"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "tip",
+          "text": "For business automation prompts, consistency is crucial. Use few-shot examples and strict output format constraints to ensure every output follows the same pattern — especially when outputs feed into other systems."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-business-1",
+          "title": "Knowledge Check",
+          "prompt": "Why is output consistency especially important for business automation prompts?",
+          "options": [
+            { "id": "a", "text": "It makes the output look professional" },
+            { "id": "b", "text": "Because automated outputs often feed into other systems, dashboards, or workflows that require predictable structure", "correct": true },
+            { "id": "c", "text": "Consistency is not important for automation" },
+            { "id": "d", "text": "It reduces the model's memory usage" }
+          ],
+          "correctFeedback": "Correct! In automation contexts, outputs often feed into downstream systems — inconsistent formatting can break integrations and require manual correction.",
+          "incorrectFeedback": "Not quite. Business automation outputs frequently feed into other systems. Inconsistent formatting breaks those downstream integrations."
+        }
+      ]
+    },
+    {
+      "id": "lesson-eval-criteria",
+      "title": "Defining Evaluation Criteria",
+      "moduleId": "mod-evaluation",
+      "order": 1,
+      "estimatedMinutes": 8,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "How Do You Know If a Prompt Is Good?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Evaluating prompt quality requires establishing clear criteria before you start prompting. Without defined success metrics, you cannot systematically improve — you are just guessing. Good evaluation criteria are task-specific, measurable, and prioritized."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Universal Evaluation Dimensions"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Accuracy — is the output factually correct and free of hallucinations?",
+            "Relevance — does the output address the actual question or task?",
+            "Completeness — are all requested elements present?",
+            "Format compliance — does the output match the specified structure?",
+            "Consistency — does the prompt produce similar quality across multiple runs?",
+            "Tone/Style — does the output match the requested communication style?",
+            "Efficiency — is the output concise without sacrificing clarity?"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "info",
+          "text": "For production prompts, create a small test set of 5–10 representative inputs with expected outputs. Run your prompt against the test set after every change to catch regressions."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-eval-1",
+          "title": "Knowledge Check",
+          "prompt": "Why should evaluation criteria be defined before you start prompting?",
+          "options": [
+            { "id": "a", "text": "The model requires criteria to generate a response" },
+            { "id": "b", "text": "Without predefined criteria, you cannot systematically measure improvement or catch regressions", "correct": true },
+            { "id": "c", "text": "Criteria are optional and do not affect prompt quality" },
+            { "id": "d", "text": "Evaluation criteria slow down the prompting process" }
+          ],
+          "correctFeedback": "Correct! Predefined criteria give you an objective baseline for judging outputs and tracking improvement across prompt iterations.",
+          "incorrectFeedback": "Not quite. Without predefined criteria, prompt improvement becomes subjective guesswork — you need measurable goals to iterate systematically."
+        }
+      ]
+    },
+    {
+      "id": "lesson-iteration-workflow",
+      "title": "The Iteration Workflow",
+      "moduleId": "mod-evaluation",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Systematic Prompt Improvement"
+        },
+        {
+          "type": "paragraph",
+          "text": "Professional prompt engineering follows an iterative workflow: write a prompt, evaluate the output against criteria, diagnose failures, make targeted changes, and re-evaluate. This cycle repeats until the prompt consistently meets quality standards."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "The Iteration Cycle"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Draft an initial prompt based on the task requirements",
+            "Run the prompt against 3–5 representative test inputs",
+            "Score each output against your evaluation criteria",
+            "Identify the weakest dimension (accuracy, format, completeness, etc.)",
+            "Make one targeted change to address the weakest dimension",
+            "Re-run and compare — did the change improve the target dimension without degrading others?",
+            "Repeat until all criteria meet acceptable thresholds"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "Change one thing at a time. If you modify multiple aspects of a prompt simultaneously, you cannot determine which change caused improvement or regression."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-iteration-1",
+          "title": "Knowledge Check",
+          "prompt": "Why is it important to change only one aspect of a prompt per iteration?",
+          "options": [
+            { "id": "a", "text": "LLMs can only process one instruction at a time" },
+            { "id": "b", "text": "So you can attribute improvements or regressions to a specific change", "correct": true },
+            { "id": "c", "text": "Multiple changes always make the prompt worse" },
+            { "id": "d", "text": "It is a rule enforced by the model's API" }
+          ],
+          "correctFeedback": "Correct! Single-variable changes let you clearly attribute any improvement or regression to that specific modification, enabling systematic optimization.",
+          "incorrectFeedback": "Not quite. Changing one thing at a time lets you trace cause and effect — if you change multiple things, you cannot tell which change was responsible for the result."
+        }
+      ]
+    },
+    {
+      "id": "lesson-bias-mitigation",
+      "title": "Bias Awareness & Mitigation",
+      "moduleId": "mod-safety-guardrails",
+      "order": 1,
+      "estimatedMinutes": 8,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Recognizing and Reducing Bias"
+        },
+        {
+          "type": "paragraph",
+          "text": "LLMs can reflect and amplify biases present in their training data. Prompts that are not carefully constructed can inadvertently trigger biased outputs — stereotyping, unfair generalizations, or skewed analysis. Responsible prompt engineering actively mitigates these risks."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Sources of Bias in LLM Outputs"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Training data bias — the model patterns reflect biases in its training corpus",
+            "Prompt framing bias — how you phrase the question can lead the model toward biased conclusions",
+            "Confirmation bias — asking leading questions produces confirming answers regardless of truth",
+            "Representation bias — default outputs may not represent diverse perspectives",
+            "Automation bias — users over-trust AI outputs and do not verify them"
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Mitigation Strategies"
+        },
+        {
+          "type": "numbered-list",
+          "items": [
+            "Use neutral framing: 'What are the arguments for and against...' instead of 'Why is X better than Y?'",
+            "Request diverse perspectives: 'Consider multiple viewpoints including...'",
+            "Add explicit de-biasing instructions: 'Avoid stereotypes and ensure balanced representation'",
+            "Validate with counter-prompts: ask the model to argue the opposite position",
+            "Human review: always have a person review outputs for fairness before use"
+          ]
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-bias-1",
+          "title": "Knowledge Check",
+          "prompt": "What is prompt framing bias?",
+          "options": [
+            { "id": "a", "text": "A bug in the LLM's code" },
+            { "id": "b", "text": "When the way a question is phrased leads the model toward biased or predetermined conclusions", "correct": true },
+            { "id": "c", "text": "A formatting issue with the prompt" },
+            { "id": "d", "text": "When the prompt is too long" }
+          ],
+          "correctFeedback": "Correct! Prompt framing bias occurs when the wording of a question implicitly steers the model toward a particular conclusion, often without the prompter realizing it.",
+          "incorrectFeedback": "Not quite. Prompt framing bias is about how the wording of your question can unconsciously steer the model toward a biased or predetermined answer."
+        }
+      ]
+    },
+    {
+      "id": "lesson-guardrail-patterns",
+      "title": "Safety Guardrails & Defensive Prompting",
+      "moduleId": "mod-safety-guardrails",
+      "order": 2,
+      "estimatedMinutes": 7,
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Building Safe Prompts"
+        },
+        {
+          "type": "paragraph",
+          "text": "Safety guardrails are instructions embedded in prompts to prevent harmful, misleading, or policy-violating outputs. For production applications, defensive prompting is essential — you must anticipate misuse and build protections into the prompt itself."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Guardrail Patterns"
+        },
+        {
+          "type": "bullets",
+          "items": [
+            "Scope limitation: 'Only answer questions related to [domain]. For off-topic questions, respond with: I can only help with [domain] topics.'",
+            "Hallucination prevention: 'Only use information from the provided context. If the answer is not in the context, say: I do not have enough information to answer that.'",
+            "Source citation: 'Cite the specific section or paragraph from the provided document that supports each claim.'",
+            "Refusal instructions: 'If asked to generate harmful, illegal, or unethical content, politely decline and explain why.'",
+            "Confidence flagging: 'If your confidence in any statement is below 80%, prefix it with [LOW CONFIDENCE] and explain your uncertainty.'"
+          ]
+        },
+        {
+          "type": "callout",
+          "style": "warning",
+          "text": "No guardrail is 100% effective. Determined adversaries can sometimes bypass prompt-level guardrails. Defense in depth — combining prompt guardrails with output filtering, monitoring, and human review — is the responsible approach."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Prompt Injection Awareness"
+        },
+        {
+          "type": "paragraph",
+          "text": "Prompt injection occurs when user-supplied input contains hidden instructions that override your system prompt. For applications that accept user input, separate system instructions from user content with clear delimiters, and instruct the model to treat user input as data, not as instructions."
+        },
+        {
+          "type": "knowledge-check",
+          "id": "kc-guardrail-1",
+          "title": "Knowledge Check",
+          "prompt": "What is prompt injection?",
+          "options": [
+            { "id": "a", "text": "Injecting additional compute resources into the model" },
+            { "id": "b", "text": "When user-supplied input contains hidden instructions that attempt to override the system prompt", "correct": true },
+            { "id": "c", "text": "Adding more examples to a few-shot prompt" },
+            { "id": "d", "text": "A technique for improving prompt performance" }
+          ],
+          "correctFeedback": "Correct! Prompt injection is a security risk where adversarial content in user input tries to override system-level instructions — it is one of the most important threats for production LLM applications.",
+          "incorrectFeedback": "Not quite. Prompt injection is a security vulnerability where malicious user input contains hidden instructions designed to override or bypass the system prompt."
+        }
+      ]
+    }
+  ],
+
+  "glossary": [
+    { "term": "Prompt", "definition": "The text input given to a large language model to elicit a response. Includes instructions, context, data, and constraints." },
+    { "term": "Prompt Engineering", "definition": "The practice of designing and refining prompts to guide LLM behavior toward useful, accurate, and relevant outputs." },
+    { "term": "LLM", "definition": "Large Language Model — an AI model trained on vast amounts of text data that generates human-like text based on input prompts." },
+    { "term": "Token", "definition": "The basic unit of text that an LLM processes, roughly 3–4 characters or 0.75 words in English." },
+    { "term": "Context Window", "definition": "The maximum number of tokens an LLM can process in a single interaction, including both input (prompt) and output (response)." },
+    { "term": "Zero-Shot Prompting", "definition": "Giving the model a task instruction without providing any examples of the expected output." },
+    { "term": "Few-Shot Prompting", "definition": "Including one or more examples of the desired input-output pattern in the prompt before presenting the actual task." },
+    { "term": "Chain-of-Thought (CoT)", "definition": "A prompting technique that asks the model to show its step-by-step reasoning before arriving at a final answer." },
+    { "term": "Self-Consistency", "definition": "A CoT variation that generates multiple independent reasoning paths and selects the most common final answer." },
+    { "term": "Tree-of-Thought", "definition": "A reasoning strategy that explores multiple branching reasoning paths and evaluates which leads to the best outcome." },
+    { "term": "System Message", "definition": "A special instruction in LLM APIs that sets the model's overall behavior, persona, and constraints for the entire conversation." },
+    { "term": "Persona Prompting", "definition": "Assigning a specific role, expertise, and behavioral traits to the model to shape its output quality and style." },
+    { "term": "Task Decomposition", "definition": "Breaking a complex task into smaller, manageable sub-tasks, each handled by a focused prompt." },
+    { "term": "Prompt Chaining", "definition": "Taking the output of one prompt and feeding it as input to the next, creating a multi-stage pipeline." },
+    { "term": "Validation Gate", "definition": "A quality-checking prompt inserted between stages of a prompt chain to verify intermediate results before continuing." },
+    { "term": "Self-Critique", "definition": "A two-phase prompting pattern: first generate a response, then ask the model to critically evaluate it for errors." },
+    { "term": "Iterative Refinement", "definition": "Treating model interaction as a conversation with targeted follow-up instructions to progressively improve output quality." },
+    { "term": "Delimiter", "definition": "A marker (such as triple backticks, XML tags, or dashes) used to clearly separate sections of a prompt." },
+    { "term": "Negative Instruction", "definition": "Telling the model what to avoid in its output, used to prevent known failure modes." },
+    { "term": "Hallucination", "definition": "When an LLM generates information that is factually incorrect or fabricated but presented confidently as true." },
+    { "term": "Prompt Injection", "definition": "A security attack where user-supplied input contains hidden instructions designed to override the system prompt." },
+    { "term": "Guardrail", "definition": "An instruction embedded in a prompt to prevent harmful, misleading, or policy-violating outputs." },
+    { "term": "Prompt Framing Bias", "definition": "When the wording of a prompt unconsciously steers the model toward biased or predetermined conclusions." },
+    { "term": "Automation Bias", "definition": "The tendency for users to over-trust AI outputs and not verify them independently." },
+    { "term": "Output Format Constraint", "definition": "An explicit instruction specifying the structure, format, or template the model's response should follow." },
+    { "term": "Attention Mechanism", "definition": "The component in transformer-based LLMs that determines how much weight each token gives to every other token during processing." },
+    { "term": "Lost in the Middle", "definition": "The phenomenon where LLMs attend more strongly to information at the beginning and end of long prompts, potentially under-weighting middle content." },
+    { "term": "Temperature", "definition": "An LLM parameter that controls output randomness. Lower values produce more deterministic outputs; higher values produce more creative/varied outputs." },
+    { "term": "Confidence Flagging", "definition": "A prompting technique that asks the model to rate its certainty on each claim and flag low-confidence statements." },
+    { "term": "Defense in Depth", "definition": "A security approach combining multiple protective layers (prompt guardrails, output filtering, monitoring, human review) rather than relying on any single safeguard." }
+  ],
+
+  "references": [
+    { "title": "OpenAI Prompt Engineering Guide", "url": "https://platform.openai.com/docs/guides/prompt-engineering" },
+    { "title": "Anthropic Prompt Engineering Documentation", "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview" },
+    { "title": "Google — Chain-of-Thought Prompting Research", "url": "https://arxiv.org/abs/2201.11903" },
+    { "title": "Prompt Engineering Guide (Community)", "url": "https://www.promptingguide.ai" },
+    { "title": "Microsoft — Prompt Engineering Techniques", "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" }
+  ]
+}

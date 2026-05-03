@@ -1,0 +1,9 @@
+{
+  "curricula": [
+    {
+      "id": "prompt-engineering-v1",
+      "title": "Prompt Engineering for LLMs",
+      "file": "prompt-engineering-v1.json"
+    }
+  ]
+}
